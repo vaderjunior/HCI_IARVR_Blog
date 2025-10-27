@@ -1,4 +1,3 @@
-baseURL = "https://vaderjunior.github.io/HCI_IARVR_Blog"
 languageCode = 'en-us'
 title = 'Ajays New Hugo Site'
 theme="paper"
