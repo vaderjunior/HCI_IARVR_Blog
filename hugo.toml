@@ -1,8 +1,13 @@
 baseURL = "https://vaderjunior.github.io/HCI_IARVR_Blog/"
-languageCode = 'en-us'
-title = 'Ajays New Hugo Site'
-theme="paper"
+languageCode = "en-us"
+title = "Ajays New Hugo Site"
+theme = "paper"
 publishDir = "docs"
+
+# Fix asset paths for GitHub Pages subfolder
+canonifyURLs = true
+relativeURLs = true
+
 [caches]
   [caches.images]
-    dir = ':cacheDir/images'
+    dir = ":cacheDir/images"
