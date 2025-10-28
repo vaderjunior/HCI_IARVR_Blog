@@ -24,7 +24,9 @@ https://learn.unity.com/project/roll-a-ball
 
 I worked through the part where you set up the ground and ball:
 
-{{< video src="rollaball1.mp4" >}}
+{{< video src="rollaball1.mp4" autoplay="true" loop="true" muted="true" playsinline="true" >}}
+
+
 
 The tutorial is beginner-friendly and well explained. But…
 

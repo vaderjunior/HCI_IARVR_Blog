@@ -1,0 +1,11 @@
+{{- $src := .Get "src" -}}
+<video
+  src="{{ $src }}"
+  {{ with .Get "poster" }}poster="{{ . }}"{{ end }}
+  {{ if eq (.Get "autoplay") "true" }}autoplay{{ end }}
+  {{ if eq (.Get "loop") "true" }}loop{{ end }}
+  {{ if eq (.Get "muted") "true" }}muted{{ end }}
+  {{ if eq (.Get "playsinline") "true" }}playsinline{{ end }}
+  controls
+  style="max-width:100%;height:auto;"
+></video>
