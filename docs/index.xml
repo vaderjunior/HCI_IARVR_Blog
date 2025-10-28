@@ -6,14 +6,14 @@
     <description>Recent content on Ajays New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Oct 2025 17:33:36 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 28 Oct 2025 17:33:36 +0100</lastBuildDate>
     <atom:link href="https://vaderjunior.github.io/HCI_IARVR_Blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
+      <title>Day 1: Setting up Unity, Meta tools, and starting the Roll-a-Ball game</title>
       <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/my-first-post/</link>
-      <pubDate>Mon, 27 Oct 2025 17:33:36 +0100</pubDate>
+      <pubDate>Tue, 28 Oct 2025 17:33:36 +0100</pubDate>
       <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/my-first-post/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Day 1: Setting up Unity, Meta tools, and starting the Roll-a-Ball game&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Phew — today was long, but honestly, pretty exciting.&lt;/p&gt;&#xA;&lt;p&gt;I started by factory-resetting the headset because it was still logged into a previous account. I wanted to use my own Meta account, so that was necessary. After setting it up, I played around with it a bit (and so did my friends). My roommate ended up bowling in VR — I think we’re all easily impressed 😄&lt;/p&gt;</description>
+      <description>&lt;p&gt;Phew, today was long but really productive.&lt;/p&gt;&#xA;&lt;p&gt;I started by factory resetting the headset because it was still logged into an old account. I wanted to use my own Meta account, so I set it up again. After that I tried it out for a bit and let my friends do the same. My roommate played bowling in VR and we all had a good laugh.&lt;/p&gt;&#xA;&lt;p&gt;Later I moved on to learning Unity and some C#, both completely new to me. Before that, I had finished setting up this Hugo website yesterday. I first tried a fancy theme, but it needed too many extra things, so I switched to the Paper theme that Yara recommended. It was simple and worked right away.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
