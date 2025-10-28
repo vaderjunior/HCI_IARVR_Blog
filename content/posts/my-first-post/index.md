@@ -10,7 +10,7 @@ I started by factory resetting the headset because it was still logged into an o
 
 Later I moved on to learning Unity and some C#, both completely new to me. Before that, I had finished setting up this Hugo website yesterday. I first tried a fancy theme, but it needed too many extra things, so I switched to the Paper theme that Yara recommended. It was simple and worked right away.
 
-{{< figure src="website1.png" alt="First steps with the website" >}}
+![First steps](website1.png)
 
 ### Roll-a-Ball
 
