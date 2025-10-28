@@ -1,7 +1,7 @@
 +++
 date = '2025-10-28T17:33:36+01:00'
 draft = false
-title = 'Day 1: Setting up Unity, Meta tools, and starting the Roll-a-Ball game'
+title = 'Day 1: Setting up Unity, Meta tools, and starting the RollaBall game'
 +++
 
 Phew, today was long but really productive.
@@ -12,9 +12,9 @@ Later I moved on to learning Unity and some C#, both completely new to me. Befor
 
 ![First steps](website1.png)
 
-### Roll-a-Ball
+### RollaBall
 
-The Roll-a-Ball project was provided on Moodle, but I wanted to understand it better, so I followed the official Unity tutorial:
+The RollaBall project was provided on Moodle, but I wanted to understand it better, so I followed the official Unity tutorial:
 
 https://learn.unity.com/project/roll-a-ball
 
