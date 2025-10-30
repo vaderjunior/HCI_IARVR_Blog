@@ -1,7 +1,7 @@
 +++
 date = '2025-10-28T17:33:36+01:00'
 draft = false
-title = 'Day 1: Setting up Unity, Meta tools, and starting the RollaBall game'
+title = 'Day 1: Setting up Unity, Meta tools, and starting the Roll-a-Ball game'
 +++
 
 Phew, today was long but really productive.
