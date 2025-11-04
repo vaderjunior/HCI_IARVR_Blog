@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Ajays New Hugo Site</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/</link>
     <description>Recent content in Posts on Ajays New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Oct 2025 17:33:36 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Nov 2025 10:00:00 +0100</lastBuildDate>
+    <atom:link href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
-      <link>http://localhost:1313/posts/my-first-post/</link>
-      <pubDate>Mon, 27 Oct 2025 17:33:36 +0100</pubDate>
-      <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;p&gt;Yoooooooooo&lt;/p&gt;</description>
+      <title>Day 2-5: Finishing up the game and Playing it in VR</title>
+      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-2/</link>
+      <pubDate>Mon, 03 Nov 2025 10:00:00 +0100</pubDate>
+      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-2/</guid>
+      <description>&lt;p&gt;I decided to post only when I hit a real milestone instead of spamming daily logs. This one bundles a few action-packed days.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Enemies + first chaos&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;I added an enemy that chases the player ball using a &lt;code&gt;NavMeshAgent&lt;/code&gt;. Looked great… until it started orbiting me and occasionally ghosted through walls.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Reason&lt;/strong&gt;:My enemy had a visible child (EnemyBody) offset from the parent that holds the &lt;code&gt;NavMeshAgent&lt;/code&gt;.&#xA;&lt;strong&gt;Fix&lt;/strong&gt;: created a clean hierarchy Enemy (parent with Agent) → EnemyBody (mesh), then Reset the child to (0,0,0).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Day 1: Setting up Unity, Meta tools, and starting the Roll-a-Ball game</title>
+      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/my-first-post/</link>
+      <pubDate>Tue, 28 Oct 2025 17:33:36 +0100</pubDate>
+      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/my-first-post/</guid>
+      <description>&lt;p&gt;Phew, today was long but really productive.&lt;/p&gt;&#xA;&lt;p&gt;I started by factory resetting the headset because it was still logged into an old account. I wanted to use my own Meta account, so I set it up again. After that I tried it out for a bit and let my friends do the same. My roommate played bowling in VR and we all had a good laugh.&lt;/p&gt;&#xA;&lt;p&gt;Later I moved on to learning Unity and some C#, both completely new to me. Before that, I had finished setting up this Hugo website yesterday. I first tried a fancy theme, but it needed too many extra things, so I switched to the Paper theme that Yara recommended. It was simple and worked right away.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
