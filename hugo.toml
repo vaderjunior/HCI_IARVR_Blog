@@ -1,6 +1,6 @@
 baseURL = "https://vaderjunior.github.io/HCI_IARVR_Blog/"
 languageCode = "en-us"
-title = "Ajays New Hugo Site"
+title = "Ajays IARVR Site"
 theme = "paper"
 publishDir = "docs"
 
