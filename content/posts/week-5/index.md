@@ -7,11 +7,12 @@ title = 'Week 5: Getting started with Airbending or rather Unitybending'
 
 This week was finally “hands on” instead of just thinking.
 
-I started by forking and cloning the VR-locomotion-parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.
+I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.
+
 After poking around a bit I realised I had just opened a blank scene. The real content is in
 Assets/Scenes/ParkourChallenge.unity. Once I opened that, suddenly the whole level, coins, banners, etc. showed up and actually ran on the Quest.
 
-The next step was to prepare the scene for my Avatar air-scooter idea. The original setup was first-person, with the camera rig basically being the player. I wanted a third-person view where the camera follows a character sitting on a ball of air.
+The next step was to prepare the scene for my Avatar air scooter idea. The original setup was first person, with the camera rig basically being the player. I wanted a third person view where the camera follows a character sitting on a ball of air.
 
 So I:
 
@@ -29,7 +30,7 @@ So I:
 
 ![NoBounce Code](nobounce.png)
 
-- Wired a small script so that OVRCameraRig no longer moves by itself but instead follows AvatarRoot from behind with an offset, like a third-person camera.
+- Wrote a small script so that OVRCameraRig no longer moves by itself but instead follows AvatarRoot from behind with an offset, like a third-person camera. I basically used the similar one as I did for the Roll a Ball game.
 
 ```csharp
 public class ThirdPersonFollow : MonoBehaviour
@@ -72,11 +73,11 @@ By the end of the week I had:
 
 - A separate physical body (AvatarRoot) rolling through the world,
 
-- A third-person camera that follows this body,
+- A third person camera that follows this body,
 
-- And a basic “Aang on a ball” setup ready to connect to my air-scooter locomotion script next.
+- And a basic “Aang on a ball” setup ready to connect to my air scooter locomotion script next.
 
 
 ![Setup Now](image.png)
 
-The actual hand-gesture locomotion still needs work, but the foundation (project structure, avatar, colliders, camera) is finally in place.
+The actual hand gesture locomotion still needs work, but the foundation (project structure, avatar, colliders, camera) is finally in place. I also have a good idea now of how and where I should start my work. I took me about 2 days to figure out everything in the project since after roll a ball this is my second unity project. Yaras guides were very helpful.
