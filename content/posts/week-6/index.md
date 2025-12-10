@@ -80,7 +80,7 @@ With the camera behaviour in a decent spot for now, I finally started on the act
 ### <u><strong>Locomotion</strong></u>
 
 
-> **Left Hand Idea**
+> **Left Hand Idea**  
 > Hold your left controller straight and flat in front of you like you’re steering an invisible scooter, and tilt to move. I have never driven movement from a rotation like this before, so this part was pretty experimental and was doubtful to even work.
 
 {{< video src="week_6_left.mp4" autoplay="true" loop="true" muted="true" playsinline="true" >}}
@@ -133,6 +133,7 @@ Below you can see when my hand is in the zone which is very green(i made this so
 The movement still felt a bit wobbly. Sometimes a tiny tilt did more than I expected, sometimes less. But at least the basic idea of Aand on an airball that I can steer with my left controller was visible now. The plan for the next round is to make this feel more consistent and predictable. Also right hand controllers. 
 
 Cheers,
+
 -Ajay
 
 
