@@ -2,29 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/</loc>
     <lastmod>2025-12-10T09:38:16+01:00</lastmod>
   </url><url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/posts/</loc>
     <lastmod>2025-12-10T09:38:16+01:00</lastmod>
   </url><url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-6/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/posts/week-6/</loc>
     <lastmod>2025-12-10T09:38:16+01:00</lastmod>
   </url><url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-5/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/posts/week-5/</loc>
     <lastmod>2025-11-25T09:38:16+01:00</lastmod>
   </url><url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-3/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/posts/day-3/</loc>
     <lastmod>2025-11-13T14:03:36+01:00</lastmod>
   </url><url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-2/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/posts/day-2/</loc>
     <lastmod>2025-11-03T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/my-first-post/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/posts/my-first-post/</loc>
     <lastmod>2025-10-28T17:33:36+01:00</lastmod>
   </url><url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/categories/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/categories/</loc>
   </url><url>
-    <loc>https://vaderjunior.github.io/HCI_IARVR_Blog/tags/</loc>
+    <loc>http://localhost:1313/HCI_IARVR_Blog/tags/</loc>
   </url>
 </urlset>

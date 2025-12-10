@@ -6,11 +6,10 @@ title = 'Week 6 and 7: Teaching the Avatar to Follow Me or me to follow it, or h
 
 This week I finally started working on the `LocomotionTechnique` script itself instead of just moving GameObjects around like Lego. It was fun to test things out on the already existing repo, Must have taken a lot of hours to make this entir thing. Just thinking about it made me motion sick :scream:
 
-In the original project the camera rig was the player. In my version the real body is `AvatarRoot` – a capsule collider rolling through the world with a cylinder (`avatar`) and a sphere (`airball`) as place holder. I thought I will put in design later, incase everythign gets done by February. 
+In the original project the camera rig was the player. In my version the real body is `AvatarRoot`  a capsule collider rolling through the world with a cylinder (`avatar`) and a sphere (`airball`) as place holder. I thought I will put in design later, incase everythign gets done by February. 
 
 I had to put in considerable amount of time and reading up to understand how to configure this change. In practice, AvatarRoot now has the rigidbody + capsule collider and is the thing that really moves and hits the world. The OVRCameraRig just follows it and looks at it instead of being the player itself.
 
-> **Note**
 > This part is open to change, since I thought id gameify it a bit. I thought the coin collection is much easier this way. Maybe I am wrong, but I will test things out and see from there
 
 Also, I moved my third-person follow logic into `LocomotionTechnique`:
@@ -19,10 +18,10 @@ Also, I moved my third-person follow logic into `LocomotionTechnique`:
 * I added a `cameraOffset` and `followLerp`.
 * In `LateUpdate()` I started repositioning the `OVRCameraRig` behind the avatar instead of letting it move on its own.
 
-> **Note to future me:**  
-> I wasn’t sure at first where this follow logic should be added, so I went down a small rabbit hole about Unitys update order and discovered `LateUpdate()`. Unity calls **`Update()` on everything first**, and then **`LateUpdate()` afterwards**. Since my avatar movement happens earlier in the frame, putting the camera follow code in `LateUpdate()` means the avatar has already finished moving, and then the `OVRCameraRig` simply snaps in behind it. That way the camera feels more like its reacting to the final position of the avatar each frame.
+**LateUpdate vs Update**
+I wasn’t sure at first where this follow logic should be added, so I went down a small rabbit hole about Unitys update order and discovered `LateUpdate()`. Unity calls **`Update()` on everything first**, and then **`LateUpdate()` afterwards**. Since my avatar movement happens earlier in the frame, putting the camera follow code in `LateUpdate()` means the avatar has already finished moving, and then the `OVRCameraRig` simply snaps in behind it. That way the camera feels more like its reacting to the final position of the avatar each frame.
 
-> **Note**
+> **Note:**  
 > This is also where I first learned the word *yaw*. Until then everything was just “tilt” in my head. I was reading a Unity forum post where someone casually wrote about “HMD yaw”, and that made more sense so I am using it everywhere now.
 
 The very first version followed the HMD yaw: every time I turned my head, the whole rig tried to stay behind me. It looked fine when i tested it in my laptops unity game mode. But In VR it felt like my avatar was orbiting me whenever I looked to the side. Not great, and also a bit confusing because I was only trying to Look around, not drag my whole body with me.
