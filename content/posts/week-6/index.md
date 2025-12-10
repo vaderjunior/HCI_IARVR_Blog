@@ -65,11 +65,13 @@ transform.rotation = Quaternion.Slerp(
 
 So instead of following the HMD yaw, the rig now follows `AvatarRoot.forward`. The HMD is free to look around inside the rig without moving the body. Once this clicked, it suddenly felt more like a proper third-person game: the avatar is always in front of me, the world is stable, and my head isn’t secretly driving everything.
 
-**Before**
+### <u><strong>Before</strong></u>
+
 {{< video src="week_6_yaw.mp4" autoplay="true" loop="true" muted="true" playsinline="true" >}}
 
 
-**After**
+### <u><strong>After</strong></u>
+
 {{< video src="week_6_no_yaw.mp4" autoplay="true" loop="true" muted="true" playsinline="true" >}}
 
 
@@ -98,9 +100,19 @@ Then each frame I roughly do:
 * Compare it to the neutral up vector in the XZ plane.
 * Treat that difference as a tilt value and feed it into movement.
 
-I don’t fully understand all the maths under the hood yet, but this was enough to get a first prototype where tilting my left controller actually nudged the avatar around. I had to get help from online forums and chatgpt for this calculations.
+I don’t fully understand all the maths under the hood yet, but this was enough to get a first prototype where tilting my left controller actually moved the avatar around. I had to get help from online forums and chatgpt for this calculations.
 
-I Wasted around 2-3 days since even if I could not see my left hand my avatar was moving, it made no sense to me. Untill I saw by accident that my hands was still being seen at the edge f my vision, I was keeping my hands on my lap and this was still seen by the cameras even If i was not seeing it. I felt dumb and relived at the same time.
+<div style="border-left: 4px solid #ef4444; background: #fee2e2; padding: 0.75rem 1rem; margin: 1rem 0;">
+
+**Major roadblock**
+
+I wasted around 2–3 days because even when I couldn’t see my left hand, my avatar was still moving. It made no sense to me.  
+Only by accident I noticed that my hand was still just at the edge of my vision. I was keeping my hands on my lap and the Quest cameras could still see them, even though I couldn’t.  
+
+I felt dumb and relieved at the same time.
+
+</div>
+
 
 To fix it, I added “activation zones” around the head, because my left controller is almost always doing something random until i keep the whole arm behind me.
 
@@ -109,7 +121,7 @@ To fix it, I added “activation zones” around the head, because my left contr
 
 I also spawned a translucent box in the scene (`leftHandZoneVisual`) so I could see where this zone actually was. This helped a lot to debug why sometimes nothing was happening: most of the time my controller was  outside the zone.
 
-By the end of Week 6 I had:
+### <u><strong>So now below is what I have:</strong></u>
 
 * A proper third-person camera integrated into the locomotion script.
 * A calibrated left-hand controller steering concept with activation zone and reset. Needs a ton of work to calibrate tho. Now if i test i need to sit for a few minutes because i get so dizzy from the erratic movement.
