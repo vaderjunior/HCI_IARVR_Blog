@@ -18,7 +18,8 @@ Also, I moved my third-person follow logic into `LocomotionTechnique`:
 * I added a `cameraOffset` and `followLerp`.
 * In `LateUpdate()` I started repositioning the `OVRCameraRig` behind the avatar instead of letting it move on its own.
 
-**LateUpdate vs Update**
+### <u><strong>LateUpdate vs Update</strong></u>
+
 I wasn’t sure at first where this follow logic should be added, so I went down a small rabbit hole about Unitys update order and discovered `LateUpdate()`. Unity calls **`Update()` on everything first**, and then **`LateUpdate()` afterwards**. Since my avatar movement happens earlier in the frame, putting the camera follow code in `LateUpdate()` means the avatar has already finished moving, and then the `OVRCameraRig` simply snaps in behind it. That way the camera feels more like its reacting to the final position of the avatar each frame.
 
 > **Note:**  
@@ -74,7 +75,8 @@ So instead of following the HMD yaw, the rig now follows `AvatarRoot.forward`. T
 
 With the camera behaviour in a decent spot for now, I finally started on the actual “airbender” part: **left-hand tilt movement**.
 
-# Locomotion
+### <u><strong>Locomotion</strong></u>
+
 
 > **Left Hand Idea**
 > Hold your left controller straight and flat in front of you like you’re steering an invisible scooter, and tilt to move. I have never driven movement from a rotation like this before, so this part was pretty experimental and was doubtful to even work.
