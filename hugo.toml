@@ -11,3 +11,8 @@ relativeURLs = true
 [caches]
   [caches.images]
     dir = ":cacheDir/images"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
