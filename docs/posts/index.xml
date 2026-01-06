@@ -6,13 +6,20 @@
     <description>Recent content in Posts on Ajays IARVR Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Dec 2025 09:38:16 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 06 Jan 2026 09:38:16 +0100</lastBuildDate>
     <atom:link href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Winter Break and New year week: When Physics Starts Messing With My Hands</title>
+      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/winter-break-weeks/</link>
+      <pubDate>Tue, 06 Jan 2026 09:38:16 +0100</pubDate>
+      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/winter-break-weeks/</guid>
+      <description>&lt;p&gt;Last week (Week 6) I finally got the AvatarRoot + camera setup working and a very baby version of left-hand &lt;strong&gt;controller&lt;/strong&gt; tilt movement. It moved, it kinda listened, and it also made me dizzy if I tested too long. So for the next weeks the goal was basically: make this feel less like a rollercoaster ride and more like something I can actually have fun with.&lt;/p&gt;&#xA;&lt;p&gt;Also, very important change that happened here: I switched from controllers to hands.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Week 6 and 7: Teaching the Avatar to Follow Me or me to follow it, or him or them cause its a a cylinder and a sphere now</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-6/</link>
+      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-67/</link>
       <pubDate>Wed, 10 Dec 2025 09:38:16 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-6/</guid>
+      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-67/</guid>
       <description>&lt;p&gt;This week I finally started working on the &lt;code&gt;LocomotionTechnique&lt;/code&gt; script itself instead of just moving GameObjects around like Lego. It was fun to test things out on the already existing repo, Must have taken a lot of hours to make this entir thing. Just thinking about it made me motion sick :scream:&lt;/p&gt;&#xA;&lt;p&gt;In the original project the camera rig was the player. In my version the real body is &lt;code&gt;AvatarRoot&lt;/code&gt;  a capsule collider rolling through the world with a cylinder (&lt;code&gt;avatar&lt;/code&gt;) and a sphere (&lt;code&gt;airball&lt;/code&gt;) as place holder. I thought I will put in design later, incase everythign gets done by February.&lt;/p&gt;</description>
     </item>
     <item>
