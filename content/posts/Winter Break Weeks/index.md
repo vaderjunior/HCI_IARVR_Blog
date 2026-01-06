@@ -10,6 +10,8 @@ Also, very important change that happened here: I switched from controllers to h
 
 ### <u><strong>Goodbye controllers, hello hand tracking</strong></u>
 
+![NoBounce Code](image.png)
+
 Until now I was only using the Quest controllers. All the “tilt” logic was reading the controller rotation. That was easier for me to understand at first, and also it was closer to how the original repo works.
 
 But then after pitching my idea in class Professor asked me plainly why I am not using just hands, it made me think cause honestly till then that idea did not even come to me. Maye its because of my lack of experience in VR but I thought that I should at least try full hand tracking instead of driving everything with two plastic sticks.
