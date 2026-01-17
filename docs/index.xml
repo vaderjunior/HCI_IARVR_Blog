@@ -6,8 +6,15 @@
     <description>Recent content on Ajays IARVR Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Jan 2026 09:38:16 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 11:10:19 +0100</lastBuildDate>
     <atom:link href="https://vaderjunior.github.io/HCI_IARVR_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jan First Half</title>
+      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/</link>
+      <pubDate>Sat, 17 Jan 2026 11:10:19 +0100</pubDate>
+      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/</guid>
+      <description>&lt;p&gt;After all the work on left-hand and right-hand gestures, I realised something slightly embarrassing: the parkour course didn’t care at all about my &lt;code&gt;AvatarRoot&lt;/code&gt;. It still thought the &lt;strong&gt;OVRCameraRig&lt;/strong&gt; was the player.&lt;/p&gt;&#xA;&lt;p&gt;So even though I could move around and do my airbending jumps, the game logic was like: “cool story bro, who are you?”&#xA;No timer, no coin pickups, banners didn’t react, and those mini interaction tasks never started.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Winter Break and New year week: When Physics Starts Messing With My Hands</title>
       <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/winter-break-weeks/</link>
