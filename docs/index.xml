@@ -6,8 +6,15 @@
     <description>Recent content on Ajays IARVR Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Jan 2026 11:10:19 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 31 Jan 2026 09:57:00 +0100</lastBuildDate>
     <atom:link href="https://vaderjunior.github.io/HCI_IARVR_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jan Second Half: Interaction Task</title>
+      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/</link>
+      <pubDate>Sat, 31 Jan 2026 09:57:00 +0100</pubDate>
+      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/</guid>
+      <description>&lt;p&gt;Last week I ended with: “I haven’t started the interaction task at all and it’s making me anxious.”&#xA;Yeah… that anxiety aged like milk.&#xA;Because the interaction task turned out to be &lt;em&gt;two separate problems&lt;/em&gt; hiding behind one :&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;How do I even start the task?&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;How do I disable locomotion so I don’t drift away while trying to fit a T inside a hole like a stressed-out toddler?&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;This post is basically how I made the “T shape puzzle” work end-to-end:&#xA;1. enter checkpoint&#xA;2. pinch to start&#xA;3. manipulate object&#xA;4. pinch hold to finish&#xA;5. return to locomotion.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Jan First Half: Finishing up Locomotion</title>
       <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/</link>

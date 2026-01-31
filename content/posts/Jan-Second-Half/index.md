@@ -1,6 +1,6 @@
 +++
 date = '2026-01-31T09:57:00+01:00'
-draft = true
+draft = false
 title = 'Jan Second Half: Interaction Task'
 +++
 
