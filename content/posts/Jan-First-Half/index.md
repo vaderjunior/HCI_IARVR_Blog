@@ -1,7 +1,7 @@
 +++
 date = '2026-01-17T11:10:19+01:00'
 draft = false
-title = 'Jan First Half'
+title = 'Jan First Half: Finishing up Locomotion'
 +++
 
 After all the work on left-hand and right-hand gestures, I realised something slightly embarrassing: the parkour course didn’t care at all about my `AvatarRoot`. It still thought the **OVRCameraRig** was the player.
