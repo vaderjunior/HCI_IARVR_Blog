@@ -155,6 +155,18 @@ That alone made the puzzle feel *way* less claustrophobic.
 
 {{< video src="t-shape.mp4" autoplay="true" loop="true" muted="true" playsinline="true" >}}
 
+## Tiny bug fix but took me a day to figure out
+
+my avatar didn’t come back after exiting the puzzle, it was as if it completely disappeared even tho I could move normally with my two hand gestures. This was because the interaction script got disabled before it could re-enable the renderers. 
+Adding 
+```csharp
+OnDisable() 
+{ 
+    SetAvatarVisible(true); 
+} 
+```
+fixed it instantly.
+
 ---
 
 ## Where things stand now
