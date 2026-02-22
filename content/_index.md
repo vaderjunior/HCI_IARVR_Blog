@@ -1103,10 +1103,10 @@ Main takeaways:
 
 Below you can see two of my friends who participated in the user study doing their runs:
 
-{{< video src="parvathy_IARVR_Final.mp4" autoplay="false" loop="false" muted="false" playsinline="true" >}}
+{{< video src="_parvathy_IARVR_Final.mp4" autoplay="false" loop="false" muted="false" playsinline="true" >}}
 
 
-{{< video src="Manu_IARVR_Final.mp4" autoplay="false" loop="false" muted="false" playsinline="true" >}}
+{{< video src="_Manu_IARVR_Final.mp4" autoplay="false" loop="false" muted="false" playsinline="true" >}}
 
 
 ---
