@@ -1,0 +1,303 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="en-us"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon - Ajays IARVR Site</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
+1) Replacing the placeholder avatar with Aang &#43; airball sprites
+Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
+So I switched the visuals to sprites:
+
+the cylinder became an Aang sprite
+the sphere became an airball sprite
+the physics stayed the same (AvatarRoot collider &#43; rigidbody), only visuals changed
+
+Important thing I learned: I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first." />
+  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://vaderjunior.github.io/HCI_IARVR_Blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://vaderjunior.github.io/HCI_IARVR_Blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.152.2">
+  <meta itemprop="name" content="Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon">
+  <meta itemprop="description" content="Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
+1) Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
+So I switched the visuals to sprites:
+the cylinder became an Aang sprite the sphere became an airball sprite the physics stayed the same (AvatarRoot collider &#43; rigidbody), only visuals changed Important thing I learned: I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.">
+  <meta itemprop="datePublished" content="2026-02-03T18:00:00+01:00">
+  <meta itemprop="dateModified" content="2026-02-03T18:00:00+01:00">
+  <meta itemprop="wordCount" content="570"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/">
+  <meta property="og:site_name" content="Ajays IARVR Site">
+  <meta property="og:title" content="Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon">
+  <meta property="og:description" content="Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
+1) Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
+So I switched the visuals to sprites:
+the cylinder became an Aang sprite the sphere became an airball sprite the physics stayed the same (AvatarRoot collider &#43; rigidbody), only visuals changed Important thing I learned: I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-02-03T18:00:00+01:00">
+    <meta property="article:modified_time" content="2026-02-03T18:00:00+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon">
+  <meta name="twitter:description" content="Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
+1) Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
+So I switched the visuals to sprites:
+the cylinder became an Aang sprite the sphere became an airball sprite the physics stayed the same (AvatarRoot collider &#43; rigidbody), only visuals changed Important thing I learned: I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.">
+
+  <link rel="canonical" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/"
+      >Ajays IARVR Site</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon</h1><div class="text-xs antialiased opacity-60"><time>Feb 3, 2026</time></div></header>
+
+  <section><p>Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.</p>
+<h2 id="1-replacing-the-placeholder-avatar-with-aang--airball-sprites">1) Replacing the placeholder avatar with Aang + airball sprites</h2>
+<p>Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.</p>
+<p>So I switched the visuals to sprites:</p>
+<ul>
+<li>the <strong>cylinder</strong> became an <strong>Aang sprite</strong></li>
+<li>the <strong>sphere</strong> became an <strong>airball sprite</strong></li>
+<li>the physics stayed the same (AvatarRoot collider + rigidbody), only visuals changed</li>
+</ul>
+<p><strong>Important thing I learned:</strong> I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.</p>
+<p><strong>Steps that worked for me:</strong></p>
+<ul>
+<li>Drag PNG into <code>Assets/</code></li>
+<li>Click the PNG → Inspector → set <strong>Texture Type = Sprite (2D and UI)</strong></li>
+<li>Apply</li>
+<li>Then drag it into the SpriteRenderer slot</li>
+</ul>
+<figure><img src="PLACEHOLDER_sprite_import.png"
+    alt="(add screenshot) Sprite import settings in Unity Inspector"><figcaption>
+      <p>(add screenshot) Sprite import settings in Unity Inspector</p>
+    </figcaption>
+</figure>
+
+<p>Also I kept meshes hidden because I only want sprites visible. If any mesh renderer comes back during runtime, I force-hide it again.</p>
+<figure><img src="PLACEHOLDER_aang_airball_scene.png"
+    alt="(add screenshot) AvatarRoot with Aang sprite &#43; airball sprite as visuals"><figcaption>
+      <p>(add screenshot) AvatarRoot with Aang sprite + airball sprite as visuals</p>
+    </figcaption>
+</figure>
+
+<video
+  controls
+  autoplay
+  loop
+  muted
+  playsinline
+  width="900"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='../../videos/PLACEHOLDER_aang_airball_playtest.mp4' type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2 id="2-interaction-task-fixing-backward-translation-tilt-back-actually-pulls-it-towards-me">2) Interaction task: fixing backward translation (tilt back actually pulls it towards me)</h2>
+<p>In the object interaction task, translation was working forward, but “tilt back” was refusing to move backward.
+I was pinching and doing the “three fingers up / Jesus Christ” wrist bend, but nothing happened.</p>
+<p>Turns out my logic was reading <code>rightHand.transform.forward</code>, and that axis doesn’t always flip the way my brain expects when I tilt my wrist back.</p>
+<p>So I changed the translation direction to use <code>rightHand.transform.up</code> instead (projected onto XZ).
+That made the gesture match what I naturally do:</p>
+<ul>
+<li>pinch + tilt forward → push away</li>
+<li>pinch + tilt back → pull towards me</li>
+<li>pinch + tilt right/left → slide right/left</li>
+</ul>
+<p>And I updated the neutral calibration to also use the same axis so the comparison stays consistent.</p>
+<figure><img src="PLACEHOLDER_translation_fix.png"
+    alt="(add screenshot) Translation axis change: forward → up &#43; neutral calibration update"><figcaption>
+      <p>(add screenshot) Translation axis change: forward → up + neutral calibration update</p>
+    </figcaption>
+</figure>
+
+<video
+  controls
+  autoplay
+  loop
+  muted
+  playsinline
+  width="900"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='../../videos/PLACEHOLDER_interaction_backward_working.mp4' type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2 id="3-hud-still-running-but-only-visible-when-i-trigger-it">3) HUD: still running, but only visible when I trigger it</h2>
+<p>When I start the parkour I see big UI text in my face (time, coins, etc.).
+I wanted it to keep updating in the background, but only show up when I want.</p>
+<p>I tried hiding the canvas, but Oculus UI stuff can be weird and it didn’t reliably disappear.
+The version that finally worked was: <strong>disable the TMP text renderers</strong>, not the logic.</p>
+<p>So <code>ParkourCounter</code> keeps updating <code>timeText.text</code> and <code>coinText.text</code>, but the text is invisible until I toggle it on.</p>
+<p>Gesture-wise, I avoided pinch because pinch is already used for starting/exiting tasks. I made it something separate (hands together + relaxed), and it toggles HUD on/off like a switch.</p>
+<figure><img src="PLACEHOLDER_hud_toggle_script.png"
+    alt="(add screenshot) HUD toggle script attached to the HUD Canvas"><figcaption>
+      <p>(add screenshot) HUD toggle script attached to the HUD Canvas</p>
+    </figcaption>
+</figure>
+
+<video
+  controls
+  autoplay
+  loop
+  muted
+  playsinline
+  width="900"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='../../videos/PLACEHOLDER_hud_toggle_demo.mp4' type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2 id="4-quick-recap-of-what-improved-today">4) Quick recap of what improved today</h2>
+<ul>
+<li>Aang + airball sprites replaced the cursed cylinder + sphere visuals</li>
+<li>Object interaction “tilt back” finally works (backward translation fixed)</li>
+<li>HUD is now optional: it runs always, but only shows when I summon it</li>
+</ul>
+<p>It felt like a small day, but honestly these were the kind of annoying issues that made testing feel messy. Now it feels way cleaner.</p>
+<p>Next up: real playtesting on the parkour level again and checking if anything feels unfair (coin collection especially), now that visuals and UI are not fighting me anymore.</p>
+<p>Cheers,
+Ajay</p>
+</section>
+
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/"
+      ><span>Jan Second Half: Interaction Task</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://vaderjunior.github.io/HCI_IARVR_Blog/">Ajays IARVR Site</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

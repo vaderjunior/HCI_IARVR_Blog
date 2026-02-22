@@ -1,0 +1,270 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="en-us"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Week 5: Getting started with Airbending or rather Unitybending - Ajays IARVR Site</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="This week was finally “hands on” instead of just thinking.
+I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.
+After poking around a bit I realised I had just opened a blank scene. The real content is in
+Assets/Scenes/ParkourChallenge.unity. Once I opened that, suddenly the whole level, coins, banners, etc. showed up and actually ran on the Quest." />
+  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://vaderjunior.github.io/HCI_IARVR_Blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://vaderjunior.github.io/HCI_IARVR_Blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.152.2">
+  <meta itemprop="name" content="Week 5: Getting started with Airbending or rather Unitybending">
+  <meta itemprop="description" content="This week was finally “hands on” instead of just thinking.
+I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.
+After poking around a bit I realised I had just opened a blank scene. The real content is in Assets/Scenes/ParkourChallenge.unity. Once I opened that, suddenly the whole level, coins, banners, etc. showed up and actually ran on the Quest.">
+  <meta itemprop="datePublished" content="2025-11-25T09:38:16+01:00">
+  <meta itemprop="dateModified" content="2025-11-25T09:38:16+01:00">
+  <meta itemprop="wordCount" content="479"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-5/">
+  <meta property="og:site_name" content="Ajays IARVR Site">
+  <meta property="og:title" content="Week 5: Getting started with Airbending or rather Unitybending">
+  <meta property="og:description" content="This week was finally “hands on” instead of just thinking.
+I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.
+After poking around a bit I realised I had just opened a blank scene. The real content is in Assets/Scenes/ParkourChallenge.unity. Once I opened that, suddenly the whole level, coins, banners, etc. showed up and actually ran on the Quest.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-25T09:38:16+01:00">
+    <meta property="article:modified_time" content="2025-11-25T09:38:16+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Week 5: Getting started with Airbending or rather Unitybending">
+  <meta name="twitter:description" content="This week was finally “hands on” instead of just thinking.
+I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.
+After poking around a bit I realised I had just opened a blank scene. The real content is in Assets/Scenes/ParkourChallenge.unity. Once I opened that, suddenly the whole level, coins, banners, etc. showed up and actually ran on the Quest.">
+
+  <link rel="canonical" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-5/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/"
+      >Ajays IARVR Site</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Week 5: Getting started with Airbending or rather Unitybending</h1><div class="text-xs antialiased opacity-60"><time>Nov 25, 2025</time></div></header>
+
+  <section><p>This week was finally “hands on” instead of just thinking.</p>
+<p>I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.</p>
+<p>After poking around a bit I realised I had just opened a blank scene. The real content is in
+Assets/Scenes/ParkourChallenge.unity. Once I opened that, suddenly the whole level, coins, banners, etc. showed up and actually ran on the Quest.</p>
+<p>The next step was to prepare the scene for my Avatar air scooter idea. The original setup was first person, with the camera rig basically being the player. I wanted a third person view where the camera follows a character sitting on a ball of air.</p>
+<p>So I:</p>
+<ul>
+<li>
+<p>Created an AvatarRoot object to act as the real player body in the world.</p>
+</li>
+<li>
+<p>Made two children:</p>
+<ul>
+<li>
+<p>Airball – a white sphere that Aang will “sit” on.</p>
+</li>
+<li>
+<p>avatar – a simple cylinder as a placeholder body.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Added a Rigidbody and a CapsuleCollider to AvatarRoot and made this the only solid collider for the avatar. The ball and cylinder are just visuals.</p>
+</li>
+<li>
+<p>Gave the Capsule a NoBounce physics material so it doesn’t fly into the sky every time it touches the ground.</p>
+</li>
+</ul>
+<p><img src="nobounce.png" alt="NoBounce Code"></p>
+<ul>
+<li>Wrote a small script so that OVRCameraRig no longer moves by itself but instead follows AvatarRoot from behind with an offset, like a third-person camera. I basically used the similar one as I did for the Roll a Ball game.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ThirdPersonFollow</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Transform avatarRoot;   <span style="color:#75715e">// the body we follow</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Transform hmd;          <span style="color:#75715e">// CenterEyeAnchor</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> Vector3 offset = <span style="color:#66d9ef">new</span> Vector3(<span style="color:#ae81ff">0f</span>, <span style="color:#ae81ff">1.6f</span>, -<span style="color:#ae81ff">3f</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> followLerp = <span style="color:#ae81ff">10f</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> LateUpdate()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (!avatarRoot || !hmd) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Use only the HMD&#39;s yaw so the camera stays behind the avatar</span>
+</span></span><span style="display:flex;"><span>        Vector3 euler = hmd.rotation.eulerAngles;
+</span></span><span style="display:flex;"><span>        Quaternion yawOnly = Quaternion.Euler(<span style="color:#ae81ff">0f</span>, euler.y, <span style="color:#ae81ff">0f</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Desired camera position </span>
+</span></span><span style="display:flex;"><span>        Vector3 targetPos = avatarRoot.position + yawOnly * offset;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Smoothly move the rig there</span>
+</span></span><span style="display:flex;"><span>        transform.position = Vector3.Lerp(
+</span></span><span style="display:flex;"><span>            transform.position,
+</span></span><span style="display:flex;"><span>            targetPos,
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">1f</span> - Mathf.Exp(-followLerp * Time.deltaTime)
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Look at the avatar from that position</span>
+</span></span><span style="display:flex;"><span>        transform.rotation = Quaternion.LookRotation(
+</span></span><span style="display:flex;"><span>            avatarRoot.position - transform.position,
+</span></span><span style="display:flex;"><span>            Vector3.up
+</span></span><span style="display:flex;"><span>        );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>By the end of the week I had:</p>
+<ul>
+<li>
+<p>The original parkour scene running,</p>
+</li>
+<li>
+<p>A separate physical body (AvatarRoot) rolling through the world,</p>
+</li>
+<li>
+<p>A third person camera that follows this body,</p>
+</li>
+<li>
+<p>And a basic “Aang on a ball” setup ready to connect to my air scooter locomotion script next.</p>
+</li>
+</ul>
+<p><img src="image.png" alt="Setup Now"></p>
+<p>The actual hand gesture locomotion still needs work, but the foundation (project structure, avatar, colliders, camera) is finally in place. I also have a good idea now of how and where I should start my work. I took me about 2 days to figure out everything in the project since after roll a ball this is my second unity project. Yaras guides were very helpful.</p>
+</section>
+
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-67/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Week 6 and 7: Teaching the Avatar to Follow Me or me to follow it, or him or them cause its a a cylinder and a sphere now</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-3/"
+      ><span>Week 4: Thinking, thinking and more thinking</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://vaderjunior.github.io/HCI_IARVR_Blog/">Ajays IARVR Site</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

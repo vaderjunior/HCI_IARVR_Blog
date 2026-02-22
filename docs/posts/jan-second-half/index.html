@@ -1,0 +1,342 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="en-us"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Jan Second Half: Interaction Task - Ajays IARVR Site</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="Last week I ended with: “I haven’t started the interaction task at all and it’s making me anxious.”
+Yeah… that anxiety aged like milk.
+Because the interaction task turned out to be two separate problems hiding behind one :
+
+How do I even start the task?
+How do I disable locomotion so I don’t drift away while trying to fit a T inside a hole like a stressed-out toddler?
+
+This post is basically how I made the “T shape puzzle” work end-to-end:
+1. enter checkpoint
+2. pinch to start
+3. manipulate object
+4. pinch hold to finish
+5. return to locomotion." />
+  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://vaderjunior.github.io/HCI_IARVR_Blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://vaderjunior.github.io/HCI_IARVR_Blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.152.2">
+  <meta itemprop="name" content="Jan Second Half: Interaction Task">
+  <meta itemprop="description" content="Last week I ended with: “I haven’t started the interaction task at all and it’s making me anxious.” Yeah… that anxiety aged like milk. Because the interaction task turned out to be two separate problems hiding behind one :
+How do I even start the task? How do I disable locomotion so I don’t drift away while trying to fit a T inside a hole like a stressed-out toddler? This post is basically how I made the “T shape puzzle” work end-to-end: 1. enter checkpoint 2. pinch to start 3. manipulate object 4. pinch hold to finish 5. return to locomotion.">
+  <meta itemprop="datePublished" content="2026-01-31T09:57:00+01:00">
+  <meta itemprop="dateModified" content="2026-01-31T09:57:00+01:00">
+  <meta itemprop="wordCount" content="969"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/">
+  <meta property="og:site_name" content="Ajays IARVR Site">
+  <meta property="og:title" content="Jan Second Half: Interaction Task">
+  <meta property="og:description" content="Last week I ended with: “I haven’t started the interaction task at all and it’s making me anxious.” Yeah… that anxiety aged like milk. Because the interaction task turned out to be two separate problems hiding behind one :
+How do I even start the task? How do I disable locomotion so I don’t drift away while trying to fit a T inside a hole like a stressed-out toddler? This post is basically how I made the “T shape puzzle” work end-to-end: 1. enter checkpoint 2. pinch to start 3. manipulate object 4. pinch hold to finish 5. return to locomotion.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-31T09:57:00+01:00">
+    <meta property="article:modified_time" content="2026-01-31T09:57:00+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jan Second Half: Interaction Task">
+  <meta name="twitter:description" content="Last week I ended with: “I haven’t started the interaction task at all and it’s making me anxious.” Yeah… that anxiety aged like milk. Because the interaction task turned out to be two separate problems hiding behind one :
+How do I even start the task? How do I disable locomotion so I don’t drift away while trying to fit a T inside a hole like a stressed-out toddler? This post is basically how I made the “T shape puzzle” work end-to-end: 1. enter checkpoint 2. pinch to start 3. manipulate object 4. pinch hold to finish 5. return to locomotion.">
+
+  <link rel="canonical" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/"
+      >Ajays IARVR Site</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Jan Second Half: Interaction Task</h1><div class="text-xs antialiased opacity-60"><time>Jan 31, 2026</time></div></header>
+
+  <section><p>Last week I ended with: “I haven’t started the interaction task at all and it’s making me anxious.”
+Yeah… that anxiety aged like milk.
+Because the interaction task turned out to be <em>two separate problems</em> hiding behind one :</p>
+<ol>
+<li><strong>How do I even start the task?</strong></li>
+<li><strong>How do I disable locomotion so I don’t drift away while trying to fit a T inside a hole like a stressed-out toddler?</strong></li>
+</ol>
+<p>This post is basically how I made the “T shape puzzle” work end-to-end:
+1. enter checkpoint
+2. pinch to start
+3. manipulate object
+4. pinch hold to finish
+5. return to locomotion.</p>
+<hr>
+<h2 id="the-weird-start-block-was-a-trigger-station-not-a-button">The “weird start block” was a trigger station (not a button)</h2>
+<p>I kept thinking there’s a physical start button I’m supposed to grab (because there <em>is</em> that tiny block sitting there). But in my build, grabbing it wasn’t realistic since my hands were already mapped to locomotion gestures.</p>
+<p>So instead of fighting the tiny button, I made the checkpoint behave like a proper “VR station”:</p>
+<ul>
+<li>the checkpoint object is still a trigger volume (so it knows when I arrived)</li>
+<li>entering it only shows the UI (“Pinch to start”)</li>
+<li><strong>I added “pinch to start” as the actual trigger</strong> (so I can start reliably without UI clicking)</li>
+</ul>
+<p>That small change basically made the whole task usable. I tried a whole set f different gestures t trigger it but the pinch was the most reliable ne. So i sticked with it.</p>
+<p><img src="objintr1.png" alt="ObjectInteraction1"></p>
+<p><strong>Important detail:</strong> I learned it the hard way that triggers in Unity can be annoying if no Rigidbody is involved.
+So each initiator got:</p>
+<ul>
+<li><strong>CapsuleCollider</strong> → <code>Is Trigger = true</code></li>
+<li><strong>Rigidbody</strong> → <code>Use Gravity = false</code>, <code>Is Kinematic = true</code></li>
+</ul>
+<p>This way the station better detects the player entering.</p>
+<hr>
+<h2 id="starting-the-task-pinch-to-make-the-two-t-objects-appear">Starting the task: pinch to make the two T objects appear</h2>
+<p>I created a tiny starter script and slapped it on each trigger station (<code>ObjectInteractionInitiator1/2/3</code>).</p>
+<p>Logic:</p>
+<ul>
+<li>if I’m inside the station</li>
+<li>and I do an index pinch</li>
+<li>then start the task + switch mode to interaction</li>
+</ul>
+<p>Also: I fixed a subtle bug from my older logic. My <code>AvatarTriggerEnter()</code> was setting <code>isTaskStart = true</code> immediately on entering the zone. That meant timing could start before the task actually starts (while I’m still reading “start”). I changed it to <strong>only start timing on pinch</strong>.</p>
+<p>This is the core idea of the pinch start :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>modeManager.SetMode(PlayerMode.ObjectInteraction);
+</span></span><span style="display:flex;"><span>selectionTask.isTaskStart = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>selectionTask.isTaskEnd = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>selectionTask.StartOneTask();
+</span></span></code></pre></div><p>So now entering the zone is just “ready state”, pinch is the real “go”.</p>
+<p><img src="parkourcontrol.png" alt="ParkourControl"></p>
+<hr>
+<h2 id="the-most-annoying-part-locomotion-wouldnt-stop">The most annoying part: locomotion wouldn’t stop</h2>
+<p>Even after starting interaction, my avatar was still moving because… of course it was.</p>
+<p>I originally disabled “Player Locomotor”, but my actual movement logic is in my big custom script <code>LocomotionTechnique</code> attached to <strong>OVRCameraRig</strong>. So locomotion kept reading hand input and pushing the Rigidbody.</p>
+<p>The fix was very simple in hindsight:</p>
+<ul>
+<li>put <strong>LocomotionTechnique</strong> inside <code>PlayerModeManager → locomotionBehaviours[]</code></li>
+<li>put <code>ObjectTInteractionController</code> inside <code>interactionBehaviours[]</code></li>
+</ul>
+<p>Now switching mode actually disables the right components. This took the majority of my time during the third week since fugure out th logic was not easy. :D</p>
+<p>Also, I added a small “stop momentum” so the avatar doesn’t keep sliding after the switch.</p>
+<hr>
+<h2 id="interaction-controls-make-it-feel-pov-based-not-world-based">Interaction controls: make it feel POV-based, not world-based</h2>
+<p>The original swirl translation idea worked… but it was not precise and it felt one-direction-y.</p>
+<p>So I changed the control mapping to something that makes more sense to us mere mortals:</p>
+<h3 id="left-hand-rotation">Left hand (rotation)</h3>
+<ul>
+<li><strong>Left index pinch + rotate wrist</strong></li>
+<li>rotation is slightly adjusted in camera yaw space so it feels POV aligned (less “why is it rotating like that?”)</li>
+</ul>
+<h3 id="right-hand-translation">Right hand (translation)</h3>
+<ul>
+<li>
+<p><strong>Right index pinch + tilt</strong> moves the object in XZ plane relative to my POV</p>
+<ul>
+<li>tilt forward = push away</li>
+<li>tilt back = pull towards me</li>
+<li>tilt right = move right</li>
+</ul>
+</li>
+<li>
+<p><strong>Right middle pinch + lift/drop hand</strong> moves the object up/down (Y axis)</p>
+</li>
+</ul>
+<p>And because wobble was a thing, I added smoothing + deadzone, so tiny wrist noise doesn’t jiggle the object constantly.</p>
+<hr>
+<h2 id="finishing-the-task">Finishing the task</h2>
+<p>I also needed a clean way to end the task and go back to locomotion.</p>
+<p>I didn’t want a button UI, because:</p>
+<ul>
+<li>I’m already using hands for movement</li>
+<li>UI clicking in VR is pain</li>
+<li>I just want something reliable</li>
+</ul>
+<p>So I added:
+<strong>hold BOTH index pinches for approx 1s</strong> to finish</p>
+<p>This calls:</p>
+<ul>
+<li><code>selectionTask.EndOneTask()</code></li>
+<li>switches mode back to locomotion</li>
+</ul>
+<p>The essential part :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (selectionTask) selectionTask.EndOneTask();
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (modeManager) modeManager.SetMode(PlayerMode.Locomotion);
+</span></span></code></pre></div><p>Now the task loop feels complete:
+1. start
+2. manipulate
+3. finish
+4. return</p>
+<hr>
+<h2 id="one-tiny-change-that-made-it-so-much-better-hide-the-avatar">One tiny change that made it so much better: hide the avatar</h2>
+<p>My avatar body was blocking the view while doing the puzzle. Like, my own shoulders were the final boss like in dark souls where the camera is sometimes the villain.</p>
+<p>So during interaction mode I hide the avatar renderers (not the collider / rigidbody, just the visuals).
+That alone made the puzzle feel <em>way</em> less claustrophobic.</p>
+<video
+  controls
+  autoplay
+  loop
+  muted
+  playsinline
+  width="900"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='../../videos/t-shape.mp4' type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2 id="tiny-bug-fix-but-took-me-a-day-to-figure-out">Tiny bug fix but took me a day to figure out</h2>
+<p>my avatar didn’t come back after exiting the puzzle, it was as if it completely disappeared even tho I could move normally with my two hand gestures. This was because the interaction script got disabled before it could re-enable the renderers.
+Adding</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>OnDisable() 
+</span></span><span style="display:flex;"><span>{ 
+</span></span><span style="display:flex;"><span>    SetAvatarVisible(<span style="color:#66d9ef">true</span>); 
+</span></span><span style="display:flex;"><span>} 
+</span></span></code></pre></div><p>fixed it instantly.</p>
+<hr>
+<h2 id="where-things-stand-now">Where things stand now</h2>
+<p>The interaction task is finally real and playable:</p>
+<ul>
+<li>enter checkpoint → UI appears</li>
+<li>pinch → spawns object + target</li>
+<li>locomotion disables cleanly</li>
+<li>I can rotate + translate the T piece precisely</li>
+<li>hold both pinches → task ends and locomotion returns</li>
+<li>avatar doesn’t block my view anymore</li>
+</ul>
+<p>This was one of those hard weeks, but it’s also the first time the project feels like kinda close to the finish line.</p>
+<p>Next up: making the interaction feel even more natural, and cleaning up the code.</p>
+<p>Cheers,
+Ajay</p>
+</section>
+
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/"
+      ><span>Jan First Half: Finishing up Locomotion</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://vaderjunior.github.io/HCI_IARVR_Blog/">Ajays IARVR Site</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

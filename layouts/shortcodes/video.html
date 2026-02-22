@@ -1,11 +1,20 @@
 {{- $src := .Get "src" -}}
+{{- $autoplay := eq (.Get "autoplay" | default "false") "true" -}}
+{{- $loop := eq (.Get "loop" | default "false") "true" -}}
+{{- $muted := eq (.Get "muted" | default "false") "true" -}}
+{{- $playsinline := eq (.Get "playsinline" | default "false") "true" -}}
+{{- $controls := ne (.Get "controls" | default "true") "false" -}}
+{{- $width := .Get "width" | default "900" -}}
+
 <video
-  src="{{ $src }}"
-  {{ with .Get "poster" }}poster="{{ . }}"{{ end }}
-  {{ if eq (.Get "autoplay") "true" }}autoplay{{ end }}
-  {{ if eq (.Get "loop") "true" }}loop{{ end }}
-  {{ if eq (.Get "muted") "true" }}muted{{ end }}
-  {{ if eq (.Get "playsinline") "true" }}playsinline{{ end }}
-  controls
-  style="max-width:100%;height:auto;"
-></video>
+  {{ if $controls }}controls{{ end }}
+  {{ if $autoplay }}autoplay{{ end }}
+  {{ if $loop }}loop{{ end }}
+  {{ if $muted }}muted{{ end }}
+  {{ if $playsinline }}playsinline{{ end }}
+  width="{{ $width }}"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='{{ (printf "videos/%s" $src) | relURL }}' type="video/mp4">
+  Your browser does not support the video tag.
+</video>

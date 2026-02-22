@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ajays IARVR Site</title>
+    <title>Airbending Locomotion &#43; Interaction in VR Parkour on Ajays IARVR Site</title>
     <link>https://vaderjunior.github.io/HCI_IARVR_Blog/</link>
-    <description>Recent content on Ajays IARVR Site</description>
+    <description>Recent content in Airbending Locomotion &#43; Interaction in VR Parkour on Ajays IARVR Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Jan 2026 09:57:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 18:00:00 +0100</lastBuildDate>
     <atom:link href="https://vaderjunior.github.io/HCI_IARVR_Blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon</title>
+      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/</link>
+      <pubDate>Tue, 03 Feb 2026 18:00:00 +0100</pubDate>
+      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/</guid>
+      <description>&lt;p&gt;Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-replacing-the-placeholder-avatar-with-aang--airball-sprites&#34;&gt;1) Replacing the placeholder avatar with Aang + airball sprites&lt;/h2&gt;&#xA;&lt;p&gt;Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.&lt;/p&gt;&#xA;&lt;p&gt;So I switched the visuals to sprites:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;the &lt;strong&gt;cylinder&lt;/strong&gt; became an &lt;strong&gt;Aang sprite&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;the &lt;strong&gt;sphere&lt;/strong&gt; became an &lt;strong&gt;airball sprite&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;the physics stayed the same (AvatarRoot collider + rigidbody), only visuals changed&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Important thing I learned:&lt;/strong&gt; I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Jan Second Half: Interaction Task</title>
       <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/</link>

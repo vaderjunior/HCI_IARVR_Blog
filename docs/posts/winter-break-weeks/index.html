@@ -1,0 +1,352 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="en-us"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Winter Break and New year week: When Physics Starts Messing With My Hands - Ajays IARVR Site</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="Last week (Week 6) I finally got the AvatarRoot &#43; camera setup working and a very baby version of left-hand controller tilt movement. It moved, it kinda listened, and it also made me dizzy if I tested too long. So for the next weeks the goal was basically: make this feel less like a rollercoaster ride and more like something I can actually have fun with.
+Also, very important change that happened here: I switched from controllers to hands." />
+  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://vaderjunior.github.io/HCI_IARVR_Blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://vaderjunior.github.io/HCI_IARVR_Blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.152.2">
+  <meta itemprop="name" content="Winter Break and New year week: When Physics Starts Messing With My Hands">
+  <meta itemprop="description" content="Last week (Week 6) I finally got the AvatarRoot &#43; camera setup working and a very baby version of left-hand controller tilt movement. It moved, it kinda listened, and it also made me dizzy if I tested too long. So for the next weeks the goal was basically: make this feel less like a rollercoaster ride and more like something I can actually have fun with.
+Also, very important change that happened here: I switched from controllers to hands.">
+  <meta itemprop="datePublished" content="2026-01-06T09:38:16+01:00">
+  <meta itemprop="dateModified" content="2026-01-06T09:38:16+01:00">
+  <meta itemprop="wordCount" content="1898"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/winter-break-weeks/">
+  <meta property="og:site_name" content="Ajays IARVR Site">
+  <meta property="og:title" content="Winter Break and New year week: When Physics Starts Messing With My Hands">
+  <meta property="og:description" content="Last week (Week 6) I finally got the AvatarRoot &#43; camera setup working and a very baby version of left-hand controller tilt movement. It moved, it kinda listened, and it also made me dizzy if I tested too long. So for the next weeks the goal was basically: make this feel less like a rollercoaster ride and more like something I can actually have fun with.
+Also, very important change that happened here: I switched from controllers to hands.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-06T09:38:16+01:00">
+    <meta property="article:modified_time" content="2026-01-06T09:38:16+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Winter Break and New year week: When Physics Starts Messing With My Hands">
+  <meta name="twitter:description" content="Last week (Week 6) I finally got the AvatarRoot &#43; camera setup working and a very baby version of left-hand controller tilt movement. It moved, it kinda listened, and it also made me dizzy if I tested too long. So for the next weeks the goal was basically: make this feel less like a rollercoaster ride and more like something I can actually have fun with.
+Also, very important change that happened here: I switched from controllers to hands.">
+
+  <link rel="canonical" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/winter-break-weeks/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/"
+      >Ajays IARVR Site</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Winter Break and New year week: When Physics Starts Messing With My Hands</h1><div class="text-xs antialiased opacity-60"><time>Jan 6, 2026</time></div></header>
+
+  <section><p>Last week (Week 6) I finally got the AvatarRoot + camera setup working and a very baby version of left-hand <strong>controller</strong> tilt movement. It moved, it kinda listened, and it also made me dizzy if I tested too long. So for the next weeks the goal was basically: make this feel less like a rollercoaster ride and more like something I can actually have fun with.</p>
+<p>Also, very important change that happened here: I switched from controllers to hands.</p>
+<h3 id="goodbye-controllers-hello-hand-tracking"><u><strong>Goodbye controllers, hello hand tracking</strong></u></h3>
+<p><img src="image.png" alt="NoBounce Code"></p>
+<p>Until now I was only using the Quest controllers. All the “tilt” logic was reading the controller rotation. That was easier for me to understand at first, and also it was closer to how the original repo works.</p>
+<p>But then after pitching my idea in class Professor asked me plainly why I am not using just hands, it made me think cause honestly till then that idea did not even come to me. Maye its because of my lack of experience in VR but I thought that I should at least try full hand tracking instead of driving everything with two plastic sticks.</p>
+<p>So I turned on hand tracking in the Oculus/OVR settings, and added <code>OVRHand leftHand</code> and <code>OVRHand rightHand</code> references to my <code>LocomotionTechnique</code> script. Then I changed the rotation code so that, if hand tracking is enabled and the hand is tracked with good confidence, I use <code>leftHand.transform.rotation</code> instead of the controller’s rotation. I kept the controller logic as a fallback, because hand tracking can randomly fail (lighting, me doing weird poses, etc.) and I didn’t want the avatar to act glitchy and weird while testing.</p>
+<p>I also started using pinch strength to detect a gesture. If all four non-thumb fingers on the left hand have pinch strength above a threshold, I count that as a “left fist”. I hooked that into calibration:</p>
+<p>left fist → call <code>CalibrateLeftNeutral()</code> → reset movement.</p>
+<p>So now I don’t need to click the X button every time. I can just clench my hand and the system understands “ok neutral pose changed”.</p>
+<p>The first time the VR skeleton hands showed up and the avatar responded to my actual hand tilt, it felt pretty magical. Also slightly cursed, because tracking is not always stable and honestly very janky.</p>
+<p>From here on, when I say “left hand” / “right hand”, I mostly mean the real tracked hands. Controllers are still there as backup, but the main idea is now controller free airbending.</p>
+<h3 id="left-hand-the-drunk-phase"><u><strong>Left hand: the drunk phase</strong></u></h3>
+<p>The core idea stayed the same: hold left hand in front, tilt, avatar glides.</p>
+<p>In practice this turned into: why does the avatar act like a typical person coming out of a bar at 10pm on a saturday??</p>
+<p>I tried to make the movement feel more “analog”(I am still holding onto this cause i have grown up playing games and this is what is coming to me naturally) and smooth.
+So I added stuff like</p>
+<ul>
+<li>deadzone for tiny tilts</li>
+<li>tiltGain to exaggerate angles</li>
+<li>maxSpeed so it doesn’t fly away, and also</li>
+<li>acceleration/drag so it feels like it’s gliding instead of snapping.</li>
+</ul>
+<p>It did work, but it was super moody. Some days a tiny tilt would suddenly send the avatar off faster than expected. Other times I tilt a lot and it still felt lazy. The numbers were never stable enough for me to trust. :crying_cat_face:</p>
+<p>This is the moment where I finally understood why people say “game feel matters”. The maths can be correct and still your brain goes “nope”.</p>
+<p>Hand tracking also made the random movement problem worse, because my hands are always doing something. Scratching face, resting on lap, drifting out of view, coming back in, etc. Even if I don’t mean to steer, the system is like “ah yes, input”.</p>
+<p>So I wrote to myself: I think I’m trying too hard to make it physically clever. I should first make it predictable and game-like. Only then I can add fancy stuff again.</p>
+<h3 id="right-hand-we-have-a-lift-off-and-why-it-sucked"><u><strong>Right hand: We have a lift off (and why it sucked)</strong></u></h3>
+<p>At the same time I started experimenting with right hand for vertical movement. The idea is simple: avatar sits on airball, so right hand should create “air lift”.</p>
+<p>The first idea was: swirl your right hand like a cowboy spinning a rope and you build up lift. So I tracked right-hand position, computed velocity, measured how quickly the velocity direction changes (how “circular” it is), and combined that into a swirlStrength. That fed into a liftGauge which reduces over time. In physics I applied upward acceleration proportional to the gauge.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Vector3 prevPos;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> liftGauge = <span style="color:#ae81ff">0f</span>;
+</span></span><span style="display:flex;"><span>Vector3 prevVelDir = Vector3.forward;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1) estimate right-hand velocity from position change</span>
+</span></span><span style="display:flex;"><span>    Vector3 pos = rightHand.transform.position;
+</span></span><span style="display:flex;"><span>    Vector3 vel = (pos - prevPos) / Mathf.Max(Time.deltaTime, <span style="color:#ae81ff">1e-4f</span>);
+</span></span><span style="display:flex;"><span>    prevPos = pos;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> speed = vel.magnitude;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (speed &lt; <span style="color:#ae81ff">0.05f</span>) <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 2) how “circular” is the motion? (direction changing fast = more swirl)</span>
+</span></span><span style="display:flex;"><span>    Vector3 velDir = vel.normalized;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> ang = Mathf.Acos(Mathf.Clamp(Vector3.Dot(prevVelDir, velDir), -<span style="color:#ae81ff">1f</span>, <span style="color:#ae81ff">1f</span>)); 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> angPerSec = ang / Mathf.Max(Time.deltaTime, <span style="color:#ae81ff">1e-4f</span>);
+</span></span><span style="display:flex;"><span>    prevVelDir = velDir;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 3) swirl strength + gauge (build up + decay)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> swirlStrength = Mathf.Clamp01((speed * angPerSec) / <span style="color:#ae81ff">5f</span>); <span style="color:#75715e">// 5f = random scale</span>
+</span></span><span style="display:flex;"><span>    liftGauge = Mathf.Clamp01(liftGauge + swirlStrength * Time.deltaTime);
+</span></span><span style="display:flex;"><span>    liftGauge = Mathf.MoveTowards(liftGauge, <span style="color:#ae81ff">0f</span>, <span style="color:#ae81ff">0.6f</span> * Time.deltaTime); <span style="color:#75715e">// decay</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> FixedUpdate()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 4) apply smooth upward acceleration based on gauge</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> upAccel = liftGauge * maxLiftAccel;
+</span></span><span style="display:flex;"><span>    avatarBody.AddForce(Vector3.up * upAccel, ForceMode.Acceleration);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In my head and in theory this was very cool: you charge air in a circle and the ball softly rises.</p>
+<p>In reality it turned into a tiny trampoline. Even small accidental right-hand motion kept the gauge slightly above zero, which meant the avatar was always bouncing a little bit. When combined with left-hand movement it became: forward – boing – forward – boing. Like climbing an invisible staircase. With a headset on, this is not funny after 10 seconds.</p>
+<video
+  controls
+  autoplay
+  loop
+  muted
+  playsinline
+  width="900"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='../../videos/winterbreak_bouncebounce.mp4' type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>Somewhere in the middle I also tried a side experiment: right fist to charge and open to release an upward impulse. It worked but felt wrong. It was tiring and it looked strange. So I deleted it.</p>
+<blockquote>
+<p><strong>Note to future me:</strong><br>
+It’s ok to throw away ideas. The code is not sacred. Maybe its not the 1 grade point that I will get but the real treasure was knowing what doesnt work for sure.</p>
+</blockquote>
+<p>After a few rounds of this I basically had a comfort  check. In VR, weird physics + head movement + camera movement = nausea. So I stopped trying to be clever and decided to make things simple. Long time coming if you ask me.</p>
+<h3 id="pre-christmas-cleanup-making-it-feel-like-a-game"><u><strong>Pre-Christmas cleanup: making it feel like a game</strong></u></h3>
+<p>This week I didn’t want to add ten new features. I just wanted the existing controls to feel less chaotic. So I decided to stop being fancy and simplify everything.</p>
+<h3 id="left-hand-from-analog-mess-to-two-clear-states"><u><strong>Left hand: from analog mess to two clear states</strong></u></h3>
+<p>The analog speed idea was cool in theory, but in practice it always felt inconsistent. So I simplified it into basically a switch:</p>
+<p>If tilt is below threshold → no movement.<br>
+If tilt is above threshold → move at a fixed speed.</p>
+<p>Now it behaves more like “I am moving” vs “I am not moving”. Instantly more easy to use.</p>
+<p>I also changed how I decide the direction. Earlier I was thinking too much in world axes. Now I map movement relative to where I’m facing (and later also head yaw, see below). So tilt forward moves forward, tilt right gives clean strafe right, diagonals actually feel like diagonals.</p>
+<p>I still kept a small physics-y part for feel, so it accelerates into motion and glides a bit instead of snapping instantly. But overall the important part is: it’s predictable now.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#75715e">// LEFT HAND </span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 1) measure tilt (compare current hand &#34;up&#34; vs neutral &#34;up&#34; on XZ plane)</span>
+</span></span><span style="display:flex;"><span>Vector3 upNow = leftHandRotation * Vector3.up;
+</span></span><span style="display:flex;"><span>Vector3 tilt = <span style="color:#66d9ef">new</span> Vector3(upNow.x - upNeutral.x, <span style="color:#ae81ff">0f</span>, upNow.z - upNeutral.z);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> tiltMag = tilt.magnitude;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (tiltMag &lt; moveTiltThreshold)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    targetHorizVel = Vector3.zero;          <span style="color:#75715e">// OFF</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Vector3 tiltDir = tilt.normalized;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 2) get forward/right based on where I’m facing (yaw only)</span>
+</span></span><span style="display:flex;"><span>    Quaternion yawOnly = HeadYawOnly();     <span style="color:#75715e">// from HMD </span>
+</span></span><span style="display:flex;"><span>    Vector3 fwd   = (yawOnly * Vector3.forward).XZ().normalized;
+</span></span><span style="display:flex;"><span>    Vector3 right = (yawOnly * Vector3.right).XZ().normalized;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 3) convert tilt direction into move direction </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> f = Vector3.Dot(tiltDir, fwd);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> r = Vector3.Dot(tiltDir, right);
+</span></span><span style="display:flex;"><span>    Vector3 moveDir = (fwd * f + right * r).normalized;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    targetHorizVel = moveDir * moveSpeed;  <span style="color:#75715e">// ON (fixed speed)</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 4) smooth acceleration</span>
+</span></span><span style="display:flex;"><span>horizVel = MoveTowards(horizVel, targetHorizVel, moveAccel * dt);
+</span></span><span style="display:flex;"><span>avatarBody.linearVelocity = <span style="color:#66d9ef">new</span> Vector3(horizVel.x, avatarBody.linearVelocity.y, horizVel.z);
+</span></span></code></pre></div><h3 id="backwards-walking--discomfort-so-i-nerfed-it"><u><strong>Backwards walking = discomfort, so I nerfed it</strong></u></h3>
+<p>One thing I noticed quickly: fast backwards movement in VR feels horrible. So I added a small comfort rule: if the intended direction is mostly backwards, multiply speed by a backwardSpeedMultiplier (like 0.4). So straight back is intentionally slow. Diagonal back can still be ok.</p>
+<p>It sounds like a tiny detail, but it reduced a lot of weird movements that are not even intended.</p>
+<h3 id="right-hand-air-jumps-instead-of-continuous-lift"><u><strong>Right hand: air jumps instead of continuous lift</strong></u></h3>
+<p>Big change on the right hand: I scrapped the lift gauge and made it discrete.</p>
+<p>New idea: one strong swirl / whip motion → one clean upward pop. Then a cooldown so you can’t spam it.</p>
+<p>Under the hood I still track hand velocity and check if it’s fast enough, direction changes fast enough, and mostly horizontal (because I want rope motion, not up-down flapping). If it qualifies, I apply an impulse:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>avatarBody.AddForce(Vector3.up * swirlLiftImpulse, ForceMode.VelocityChange);
+</span></span></code></pre></div><p>Then I clamp max upward velocity so I don’t launch into VR space. The result feels much nicer. Nothing happens when I casually move my right hand. One deliberate swirl gives one jump. It feels like an actual mechanic.</p>
+<video
+  controls
+  autoplay
+  loop
+  muted
+  playsinline
+  width="900"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='../../videos/jump.mp4' type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h3 id="turning-corners-without-fighting-the-track"><u><strong>Turning corners without fighting the track</strong></u></h3>
+<p>One sneaky problem with third-person movement on the parkour track is corners. If the road turns 90 degrees and my movement reference is only avatar forward, then I end up kind of strafing down the new road instead of moving forward, because the avatar forward is still the old direction.</p>
+<p>So I let head yaw help here. When I look into the new road segment, head yaw changes. I use that yaw to decide what “forward” should be for the tilt mapping. So I can look into the next segment, tilt forward again, and the avatar moves into the turn naturally.</p>
+<p>It’s basically: “where I look is where I mean to go next”. The camera still stays behind the avatar, but the direction mapping respects my attention, which made 90° and 180° turns feel way better.</p>
+<video
+  controls
+  autoplay
+  loop
+  muted
+  playsinline
+  width="900"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='../../videos/lefthandwithyaw.mp4' type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<h2 id="whats-next"><u><strong>What’s next</strong></u></h2>
+<p>So right now this phase ended with:</p>
+<p>Left hand = predictable movement (two states).
+Right hand = clicky air jumps .
+Turning corners</p>
+<p>Next up is the other half of the problem: the parkour game still doesn’t fully see my air bender boy on an air scooter. The banners, coins and mini object-interaction tasks were written for the original first-person rig. Now that my capsule avatar is the “real” body, I need to make sure the rest of the level recognizes it again. For some reason the coins does not trigger when i enter the start pole. Well a problem for another day.</p>
+<p>Cheers,
+– Ajay</p>
+</section>
+
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Jan First Half: Finishing up Locomotion</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-67/"
+      ><span>Week 6 and 7: Teaching the Avatar to Follow Me or me to follow it, or him or them cause its a a cylinder and a sphere now</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://vaderjunior.github.io/HCI_IARVR_Blog/">Ajays IARVR Site</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>

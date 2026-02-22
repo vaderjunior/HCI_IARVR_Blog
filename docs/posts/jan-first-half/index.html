@@ -1,0 +1,364 @@
+<!doctype html>
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg:#faf8f1"
+  lang="en-us"
+  dir="ltr"
+><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Jan First Half: Finishing up Locomotion - Ajays IARVR Site</title>
+
+  
+  <meta name="theme-color" />
+
+  <meta name="description" content="After all the work on left-hand and right-hand gestures, I realised something slightly embarrassing: the parkour course didn’t care at all about my AvatarRoot. It still thought the OVRCameraRig was the player.
+So even though I could move around and do my airbending jumps, the game logic was like: “cool story bro, who are you?”
+No timer, no coin pickups, banners didn’t react, and those mini interaction tasks never started." />
+  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.css" />
+
+  
+  <link rel="preload" as="image" href="https://vaderjunior.github.io/HCI_IARVR_Blog/theme.png" />
+
+  
+
+  
+
+  <script
+    defer
+    src="https://vaderjunior.github.io/HCI_IARVR_Blog/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+
+  
+  <link
+    rel="icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/favicon.ico"
+  />
+  <link
+    rel="apple-touch-icon"
+    href="https://vaderjunior.github.io/HCI_IARVR_Blog/apple-touch-icon.png"
+  />
+
+  <meta name="generator" content="Hugo 0.152.2">
+  <meta itemprop="name" content="Jan First Half: Finishing up Locomotion">
+  <meta itemprop="description" content="After all the work on left-hand and right-hand gestures, I realised something slightly embarrassing: the parkour course didn’t care at all about my AvatarRoot. It still thought the OVRCameraRig was the player.
+So even though I could move around and do my airbending jumps, the game logic was like: “cool story bro, who are you?” No timer, no coin pickups, banners didn’t react, and those mini interaction tasks never started.">
+  <meta itemprop="datePublished" content="2026-01-17T11:10:19+01:00">
+  <meta itemprop="dateModified" content="2026-01-17T11:10:19+01:00">
+  <meta itemprop="wordCount" content="956"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/">
+  <meta property="og:site_name" content="Ajays IARVR Site">
+  <meta property="og:title" content="Jan First Half: Finishing up Locomotion">
+  <meta property="og:description" content="After all the work on left-hand and right-hand gestures, I realised something slightly embarrassing: the parkour course didn’t care at all about my AvatarRoot. It still thought the OVRCameraRig was the player.
+So even though I could move around and do my airbending jumps, the game logic was like: “cool story bro, who are you?” No timer, no coin pickups, banners didn’t react, and those mini interaction tasks never started.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-01-17T11:10:19+01:00">
+    <meta property="article:modified_time" content="2026-01-17T11:10:19+01:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Jan First Half: Finishing up Locomotion">
+  <meta name="twitter:description" content="After all the work on left-hand and right-hand gestures, I realised something slightly embarrassing: the parkour course didn’t care at all about my AvatarRoot. It still thought the OVRCameraRig was the player.
+So even though I could move around and do my airbending jumps, the game logic was like: “cool story bro, who are you?” No timer, no coin pickups, banners didn’t react, and those mini interaction tasks never started.">
+
+  <link rel="canonical" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/" />
+</head>
+<body
+    class="bg-(--bg) text-black antialiased duration-200 ease-out [-webkit-tap-highlight-color:transparent] dark:text-white"
+  ><header
+  class="mx-auto flex h-[4.5rem] max-w-(--w) px-8 whitespace-nowrap lg:justify-center"
+>
+  <div class="relative z-50 flex items-center ltr:mr-auto rtl:ml-auto">
+    <a
+      class="-translate-y-[1px] text-2xl font-medium"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/"
+      >Ajays IARVR Site</a
+    >
+    <div
+      class="btn-dark text-[0px] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.png)_left_center/_auto_theme('spacing.6')_no-repeat] [transition:_background-position_0.4s_steps(5)] dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden ltr:-mr-8 rtl:-ml-8"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full flex-col justify-center bg-(--bg) pb-16 duration-200 select-none lg:static lg:h-auto lg:flex-row lg:bg-transparent! lg:pb-0 lg:transition-none"
+  >
+  </div>
+</header>
+<main
+      class="prose prose-neutral dark:prose-invert relative mx-auto min-h-[calc(100vh-9rem)] max-w-(--w) px-8 pt-14 pb-16"
+    ><article>
+  <header class="mb-14">
+    <h1 class="my-0! pb-2.5">Jan First Half: Finishing up Locomotion</h1><div class="text-xs antialiased opacity-60"><time>Jan 17, 2026</time></div></header>
+
+  <section><p>After all the work on left-hand and right-hand gestures, I realised something slightly embarrassing: the parkour course didn’t care at all about my <code>AvatarRoot</code>. It still thought the <strong>OVRCameraRig</strong> was the player.</p>
+<p>So even though I could move around and do my airbending jumps, the game logic was like: “cool story bro, who are you?”
+No timer, no coin pickups, banners didn’t react, and those mini interaction tasks never started.</p>
+<p>This week was basically me trying to make the level <em>recognise</em> my avatar again after i panicked when I realized this was happening in the first place. So I went back to the original game in the github and tried playing it, for some reason I never played it till now and hence why it took me so long to realize that nothing was recognizing me.</p>
+<hr>
+<h3 id="what-the-original-project-expected"><u><strong>What the original project expected</strong></u></h3>
+<p>First I tried to understand the original flow without changing anything.</p>
+<p>There’s a script called <code>ParkourCounter</code> that reacts when the player hits stuff:</p>
+<ul>
+<li>banners  → start / change stages</li>
+<li>coins  → count them</li>
+<li>task triggers (tagged <code>objectInteractionTask</code>) → show the UI and start the mini task</li>
+</ul>
+<p>And inside my <code>LocomotionTechnique</code> there’s already a function for this:</p>
+<p><code>AvatarTriggerEnter(Collider other)</code></p>
+<p>In the original repo, the camera rig itself was moving and touching those colliders. So <code>AvatarTriggerEnter()</code> would get called naturally.</p>
+<p>But in my setup:</p>
+<ul>
+<li>the thing that <em>actually moves and collides</em> is <code>AvatarRoot</code> (capsule + rigidbody)</li>
+<li>the <code>OVRCameraRig</code> is basically a follower camera now</li>
+<li>which means the rig never touches banners/coins/tasks</li>
+</ul>
+<p>So the parkour logic didn’t “break”… it just never got triggered till now :(.</p>
+<hr>
+<h3 id="triggerrelay-the-tiny-script-that-fixes-everything"><u><strong>TriggerRelay: the tiny script that fixes everything</strong></u></h3>
+<p>I didn’t want to rewrite the whole parkour system because it was already taking me a lot of time to figure out different things in the project and unity coding itself. I just wanted to forward collisions from my physical body to the script that already knows what to do. That looked more simpler even though its like a work-around.</p>
+<p>So I added a small relay script on the moving collider (AvatarRoot / hitbox object):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TriggerRelay</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> LocomotionTechnique locomotion; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> OnTriggerEnter(Collider other)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (locomotion) locomotion.AvatarTriggerEnter(other);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> OnCollisionEnter(Collision collision)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (locomotion) locomotion.AvatarTriggerEnter(collision.collider);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And I also added a debug line inside <code>AvatarTriggerEnter()</code> so I could see what I’m hitting:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Debug.Log(<span style="color:#e6db74">&#34;AvatarTriggerEnter with: &#34;</span> + other.name + <span style="color:#e6db74">&#34; tag: &#34;</span> + other.tag);
+</span></span></code></pre></div><p>This was super useful because it told me: <em>collisions are happening</em>, but not with the things I care about.</p>
+<p>At first my console spam looked like:</p>
+<ul>
+<li><code>LeftHandZoneVisual</code></li>
+<li>random floor tiles</li>
+<li>controller prefab stuff</li>
+</ul>
+<p><img src="raandom.png" alt="BannerHitBox"></p>
+<p>But never:</p>
+<ul>
+<li><code>StartBanner</code></li>
+<li><code>Coin_xx</code></li>
+<li><code>ObjectInteractionInitiator...</code></li>
+</ul>
+<p>That’s when I realised this wasn’t a “trigger relay” problem. This was a <strong>layers</strong> problem.</p>
+<hr>
+<h3 id="layers-parkour-sees-me-ground-doesnt-and-vice-versa"><u><strong>Layers: parkour sees me, ground doesn’t (and vice versa)</strong></u></h3>
+<p>The parkour objects (banners/coins/tasks) live on a custom layer called <code>locomotion</code>.
+The ground is on a different layer.</p>
+<p>My <code>AvatarRoot</code> was on <strong>Default</strong>. So:</p>
+<ul>
+<li>it collided with the ground</li>
+<li>but based on the project’s physics collision matrix, it didn’t interact with the <code>locomotion</code> layer.</li>
+</ul>
+<p>Then I tried the obvious thing: put <code>AvatarRoot</code> on the <code>locomotion</code> layer.</p>
+<p>It worked… for 2 seconds.
+Banners started triggering, and then my avatar immediately <strong>fell through the ground</strong> because now it wasn’t colliding with the floor layer anymore.</p>
+<p>So the situation was:</p>
+<ul>
+<li>Default layer → ground works, parkour ignores me</li>
+<li>Locomotion layer → parkour works, ground ignores me</li>
+</ul>
+<p>Lovely.</p>
+<hr>
+<h3 id="two-bodies-one-for-physics-one-for-talking"><u><strong>Two bodies: one for physics, one for talking</strong></u></h3>
+<p>The solution that finally made everything sane was: don’t force one collider to do two jobs.</p>
+<p>So I split it:</p>
+<p><strong>1. <code>AvatarRoot</code> (main body)</strong></p>
+<ul>
+<li>Layer: <code>Default</code></li>
+<li>CapsuleCollider + Rigidbody</li>
+<li>Handles gravity, floor, walls, normal physics</li>
+</ul>
+<p><img src="new_avatarRoot.png" alt="First steps"></p>
+<p><strong>2. <code>BannerHitbox</code> (new child under AvatarRoot)</strong></p>
+<ul>
+<li>Layer: <code>locomotion</code></li>
+<li>CapsuleCollider set to <strong>Is Trigger</strong></li>
+<li>Has the <code>TriggerRelay</code> script</li>
+</ul>
+<p><img src="BannerHitBox.png" alt="BannerHitBox"></p>
+<p>So:</p>
+<ul>
+<li><code>AvatarRoot</code> keeps behaving like a normal physical player</li>
+<li><code>BannerHitbox</code> just follows along as a “sensor” that talks to banners/coins/tasks</li>
+</ul>
+<p>Once I did this and hit Play, I finally saw the console print something satisfying:</p>
+<ul>
+<li><code>AvatarTriggerEnter with: StartBanner tag: banner</code></li>
+</ul>
+<p>And the scene actually responded:</p>
+<ul>
+<li>start banner disappears</li>
+<li>next banner appears</li>
+<li>coins spawn</li>
+<li>timer starts ticking</li>
+</ul>
+<p>That moment felt <em>way</em> too good for something this basic 😭</p>
+<p><img src="goodCoin.png" alt="BannerHitBox"></p>
+<hr>
+<h3 id="bonus-unity-froze-on-play-mode"><u><strong>Bonus: Unity froze on Play Mode</strong></u></h3>
+<p>While doing all this trial-and-error, Unity randomly decided to freeze sometimes on:</p>
+<p><code>Application.EnterPlaymode</code></p>
+<p>Only fix was to kill Unity from Task Manager. Not fun at alllllll.</p>
+<p>A friend told me a hack that helped a lot:</p>
+<ul>
+<li>
+<p>Edit → Project Settings → Editor</p>
+</li>
+<li>
+<p>enable “Enter Play Mode Options”</p>
+</li>
+<li>
+<p>disable:</p>
+<ul>
+<li>Reload Domain</li>
+<li>Reload Scene</li>
+</ul>
+</li>
+</ul>
+<p>After this, Play Mode became almost instant and the freeze stopped (for a bit).<br>
+I happily assumed: “Cool, that was the problem.”</p>
+<p>Later I realised two things:</p>
+<ol>
+<li>This wasn’t the real fix, i am still to figure out why it happens.</li>
+<li>Those settings come with side effects: static variables and some states don’t reset properly between plays, which started to be problematic.</li>
+</ol>
+<p>So in the end I <strong>switched those options back off</strong> and returned to the default behaviour.<br>
+Still, if your project is big and you know what you’re doing with static state, this trick can be worth it. Just don’t let it distract you from actually fixing your code like it did for me. xD</p>
+<hr>
+<h3 id="so-where-things-stand-now"><u><strong>So where things stand now</strong></u></h3>
+<p>Right now the full loop finally feels connected:</p>
+<ul>
+<li>
+<p>third-person avatar + camera works</p>
+</li>
+<li>
+<p>left hand tilt gives predictable movement</p>
+</li>
+<li>
+<p>right hand swirl gives clicky jumps</p>
+</li>
+<li>
+<p><strong>and</strong> the course actually reacts to my avatar again:</p>
+<ul>
+<li>banners trigger</li>
+<li>coins count</li>
+</ul>
+</li>
+</ul>
+<video
+  controls
+  autoplay
+  loop
+  muted
+  playsinline
+  width="900"
+  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
+>
+  <source src='../../videos/coinsWork.mp4' type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>There’s still polish left , and also next week I will try to figure out the interaction task.
+I have not started that at all and it is kind of making me anxious. But lets see.</p>
+<p>Cheers,
+– Ajay</p>
+</section>
+
+  <nav
+    class="mt-24 flex overflow-hidden rounded-xl bg-black/[3%] text-lg leading-[1.2]! *:flex *:w-1/2 *:items-center *:p-5 *:font-medium *:no-underline dark:bg-white/[8%] [&>*:hover]:bg-black/[2%] dark:[&>*:hover]:bg-white/[3%]"
+  ><a class="ltr:pr-3 rtl:pl-3" href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/"
+      ><span class="ltr:mr-1.5 rtl:ml-1.5">←</span><span>Jan Second Half: Interaction Task</span></a
+    ><a
+      class="justify-end pl-3 ltr:ml-auto rtl:mr-auto"
+      href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/winter-break-weeks/"
+      ><span>Winter Break and New year week: When Physics Starts Messing With My Hands</span><span class="ltr:ml-1.5 rtl:mr-1.5">→</span></a
+    ></nav></article></main><footer
+  class="mx-auto flex h-[4.5rem] max-w-(--w) items-center px-8 text-xs tracking-wider uppercase opacity-60"
+>
+  <div class="mr-auto">&copy;2026
+    <a class="link" href="https://vaderjunior.github.io/HCI_IARVR_Blog/">Ajays IARVR Site</a></div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >powered by hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >hugo-paper</a
+  >
+</footer>
+</body>
+</html>
