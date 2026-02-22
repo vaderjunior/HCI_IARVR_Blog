@@ -682,22 +682,371 @@ OnDisable()
 ---
 
 # 4. Implementation Details (complex challenges)
-This section focuses on the parts that were actually hard (not basic Unity steps).
 
-## 4.1 Input mapping in POV space (yaw-only)
-The most important improvement was mapping tilt direction relative to my POV. I compute yaw-only forward/right vectors from the HMD and then use dot products to convert hand tilt direction into a movement direction. That keeps steering consistent even when I rotate my head in the world.
+This section is only about the parts that were actually hard (not basic Unity steps). I’m writing this in a “what was the annoying problem, what did I try, and what finally worked” style.
 
-## 4.2 Noise control (gating, thresholds, smoothing)
-Hand tracking is noisy, so I used: an activation zone, a deadzone/threshold for tilt, smoothing (accelerate into target velocity), and cooldowns for jump. Without these, the avatar moves even when you don’t mean to move.
+---
 
-## 4.3 Unity update order: LateUpdate for camera follow
-Movement and physics update earlier in the frame. Putting camera follow in LateUpdate means the avatar has already moved, and the camera reacts to the final position each frame. This reduced jitter and felt more stable.
+## 4.0 High-level architecture (what I actually moved vs what is just a camera)
 
-## 4.4 Layer/collider split to integrate with existing parkour logic
-The repo’s layer collision matrix made it impossible for a single collider to both collide correctly with the ground and trigger the locomotion layer objects. The dual-body solution (physics body + trigger sensor) was the cleanest way to integrate without rewriting the repo.
+The original repo treats **OVRCameraRig** as the player body. I changed that.
 
-## 4.5 Mode switching reliability (and the “avatar didn’t come back” bug)
-Disabling scripts is simple, but it can create lifecycle bugs. I had a case where the avatar renderers stayed hidden after the puzzle because the script that should re-enable them got disabled first. The fix was enabling the avatar again inside OnDisable().
+**Final setup:**
+
+- **AvatarRoot (real player body)**  
+  - Rigidbody + CapsuleCollider  
+  - This is the thing that moves, collides with the world, and should “feel like the avatar”.
+- **OVRCameraRig (follower camera)**  
+  - No longer the physics player  
+  - It follows behind AvatarRoot like a third-person camera.
+- **Airball + avatar mesh (visuals)**  
+  - Just visuals, no real collision.
+
+**Why this matters:**  
+Once I separated “camera” from “body”, a lot of things broke in the repo (banners/coins/tasks) because the repo expects the camera rig itself to be the collider that triggers everything. Fixing that integration was one of the biggest parts of the implementation.
+
+---
+
+## 4.1 Camera follow: Update order + “orbiting” bug (why LateUpdate mattered)
+
+### The problem
+At first I made the camera follow by using the **HMD yaw** (head direction). In VR this felt wrong:
+- If I looked left/right, the whole rig tried to rotate and reposition.
+- The avatar felt like it was **orbiting me** when I just wanted to look around.
+
+### What I tried (didn’t feel good)
+- Following **HMD yaw** directly for the rig.
+- “Smoothing harder” (higher lerp) — it just made it slower to orbit, but it still orbited.
+
+### Final approach (what worked)
+- The avatar is the “real direction”.
+- The camera follows **AvatarRoot forward** (avatar yaw), not my head yaw.
+- The head is free to look around inside the rig.
+
+Also, camera follow works best in **LateUpdate** so it reacts after movement for that frame is finished.
+
+**Core idea (simplified):**
+```csharp
+void LateUpdate()
+{
+    // position camera behind the avatar
+    Vector3 targetPos =
+        avatarRoot.position
+        - avatarRoot.forward * Mathf.Abs(cameraOffset.z)
+        + Vector3.up * cameraOffset.y;
+
+    transform.position = Vector3.Lerp(transform.position, targetPos, followLerp * Time.deltaTime);
+
+    // yaw align camera rig to avatar yaw (not head yaw)
+    Quaternion targetYaw = Quaternion.Euler(0f, avatarRoot.eulerAngles.y, 0f);
+    transform.rotation = Quaternion.Slerp(transform.rotation, targetYaw, followLerp * Time.deltaTime);
+}
+```
+
+**Why LateUpdate helped:**  
+Unity runs Update() first on everything, then LateUpdate(). If AvatarRoot moves earlier in the frame, then the camera following in LateUpdate feels stable and “locked behind the avatar” instead of jittering.
+
+---
+
+## 4.2 Left-hand locomotion math: mapping tilt in POV space (yaw-only)
+
+### The goal
+I wanted “tilt forward = move forward relative to how I’m facing”, not world axes.
+
+So the final movement direction is computed in **yaw space**:
+- Take yaw-only forward/right vectors (from head yaw).
+- Convert hand tilt into a direction.
+- Convert that direction into forward/strafe motion using dot products.
+
+**Why yaw-only:**  
+Pitch/roll would make you accidentally move when you look up/down. Yaw-only keeps movement 2D and predictable.
+
+**Core mapping idea (conceptual):**
+```csharp
+Quaternion yawOnly = HeadYawOnly();            // from HMD
+Vector3 fwd   = (yawOnly * Vector3.forward);  // flattened later
+Vector3 right = (yawOnly * Vector3.right);
+
+float f = Vector3.Dot(tiltDir, fwd);
+float r = Vector3.Dot(tiltDir, right);
+
+Vector3 moveDir = (fwd * f + right * r).normalized;
+targetHorizVel = moveDir * moveSpeed;
+```
+
+This made cornering feel much better, because I can look into the next segment of the track and then tilt forward.
+
+---
+
+## 4.3 The “tilt forward makes me go backwards” bug (reference-frame drift) ✅
+
+This is the bug you asked me to include.
+
+### Symptoms
+Most of the time “tilt forward = move forward” worked, but on certain parts of the track (especially near raised pavement/edges) it sometimes:
+- flipped,
+- or skewed sideways,
+- or felt like it went backwards even though I’m clearly tilting forward.
+
+### Why it happened (the real reason)
+Two things were interacting:
+
+1) I originally stored my neutral pose in **world space** once (`upNeutralWorld`).  
+2) Later I computed the current hand “up” using something like:
+
+- controller/hand local rotation
+- multiplied by **OVRCameraRig rotation**
+
+But the OVRCameraRig rotation is not constant — I keep slerping it in LateUpdate to follow the avatar yaw.  
+When the avatar hits bumps/edges, tiny physics yaw disturbances happen. That changes the rig rotation slightly, so the “current up” rotates… but my stored neutral does not.
+
+So the math thinks the tilt direction changed even though my real hand pose didn’t.
+
+This gets even more sensitive if you then re-project movement again using HMD yaw forward/right.
+
+### What I tried (did not fully solve it)
+- Tuning thresholds / deadzones: reduced it but didn’t remove the flip.
+- Making movement more analog: actually made the drift more noticeable.
+- Zeroing angular velocity every frame: helped but bumps still caused one-frame yaw twitches.
+
+### The robust fix: calibrate + compute tilt in **HMD-yaw space**
+Instead of storing neutral in world space, I store it relative to the user’s yaw (yaw-only).  
+So neutral and current are always measured in the same stable frame.
+
+**Key idea:**
+- `LeftRotationYawSpace = Inverse(HeadYawOnly) * LeftRotationWorld`
+- Store neutral up vector in yaw space (`upNeutralYaw`)
+- Compute tilt in yaw space, then rotate back to world for movement
+
+**Code (simplified but complete idea):**
+```csharp
+Vector3 upNeutralYaw = Vector3.up;
+
+Quaternion LeftRotationYawSpace()
+{
+    Quaternion leftWorld = LeftRotationWorld();  // controller OR tracked hand in world
+    return Quaternion.Inverse(HeadYawOnly()) * leftWorld;
+}
+
+void CalibrateLeftNeutral()
+{
+    Quaternion qYaw = LeftRotationYawSpace();
+    upNeutralYaw = qYaw * Vector3.up;
+}
+
+void ComputeMoveFromTilt()
+{
+    Quaternion qLeftYaw = LeftRotationYawSpace();
+    Vector3 upYaw = qLeftYaw * Vector3.up;
+
+    // tilt relative to neutral, in yaw space
+    Vector3 tiltYaw = new Vector3(
+        upYaw.x - upNeutralYaw.x,
+        0f,
+        upYaw.z - upNeutralYaw.z
+    );
+
+    float tiltMag = new Vector2(tiltYaw.x, tiltYaw.z).magnitude;
+
+    if (tiltMag < moveTiltThreshold)
+    {
+        targetHorizVel = Vector3.zero;
+        return;
+    }
+
+    Vector3 dirYaw = tiltYaw.normalized;            // yaw-space direction
+    Vector3 moveDirWorld = HeadYawOnly() * dirYaw;  // back to world
+
+    float speed = moveSpeed;
+
+    // backward nerf: in yaw space, forward is +Z
+    if (dirYaw.z < -backwardDotThreshold)
+        speed *= backwardSpeedMultiplier;
+
+    targetHorizVel = moveDirWorld * speed;
+}
+```
+
+After this change, bumps/rig rotation changes don’t corrupt the reference frame anymore, because both neutral and current are tied to head yaw.
+
+---
+
+## 4.4 Stabilizing physics on the track (raised pavement bumps)
+
+### The problem
+The raised pavement edges caused tiny rotation impulses on the capsule. Even if they are small, in VR they show up as:
+- sudden steering changes,
+- camera feel drifting,
+- or “why did the avatar yaw slightly there?”
+
+### Fix that actually helped
+On `AvatarRoot` Rigidbody:
+- **Freeze Rotation X**
+- **Freeze Rotation Y**
+- **Freeze Rotation Z**
+
+I only want translation for this project. I don’t want the capsule to start yawing/rolling from impacts. This reduced random direction feel a lot.
+
+(When I only did `angularVelocity = Vector3.zero;` it was still possible to get one-frame rotation spikes.)
+
+---
+
+## 4.5 Input noise control (hands are always doing something)
+
+Hand tracking is always “alive”. Even resting hands on the lap can cause tiny rotations/position changes. Without strong gating, it becomes “ghost input”.
+
+### What I tried (not enough)
+- Just a deadzone: still moved sometimes because hands never truly stay still.
+- Lower sensitivity: then it felt unresponsive.
+
+### What worked (final combo)
+- **Activation zone:** left hand must be in a small box in front of chest; otherwise ignore tilt.  
+- **Deadzone:** small tilts don’t count.  
+- **Smoothing:** accelerate into target velocity instead of snapping.  
+- **Jump cooldown:** prevents accidental repeat triggers.  
+- **Backwards speed nerf:** backwards movement is uncomfortable, so clamp it.
+
+This is the difference between “cool idea” and “usable in VR”.
+
+---
+
+## 4.6 Right-hand vertical movement: continuous lift gauge vs discrete jump
+
+### What I wanted
+Right hand should create “air lift”.
+
+### Attempt 1 (cool idea, felt terrible): continuous lift gauge
+- Track hand velocity and how “circular” the motion is
+- Build up a lift gauge
+- Apply upward acceleration proportional to gauge
+
+**Why it failed:**  
+Even small accidental motion keeps the gauge slightly above zero → the avatar keeps micro-bouncing.  
+In VR that becomes nausea very fast (felt like a tiny trampoline).
+
+### Final approach: discrete “air jump”
+- Detect a deliberate swirl/whip motion
+- Apply one upward impulse
+- Add cooldown so you can’t spam
+- Clamp max upward velocity
+
+**Impulse example:**
+```csharp
+if (SwirlDetected() && Time.time > nextJumpAllowedTime)
+{
+    avatarBody.AddForce(Vector3.up * swirlLiftImpulse, ForceMode.VelocityChange);
+    nextJumpAllowedTime = Time.time + jumpCooldown;
+}
+```
+
+This “clicky jump” felt much more like a mechanic and less like constant physics noise.
+
+---
+
+## 4.7 Integrating with the parkour repo: why coins/banners didn’t trigger (layers + relay)
+
+### The problem
+After locomotion worked, I realized the parkour course didn’t care about my AvatarRoot. It still thought **OVRCameraRig** was the player. So:
+- no timer start,
+- no coins,
+- banners didn’t react,
+- tasks didn’t start.
+
+### What I tried (failed)
+- Put AvatarRoot on the `locomotion` layer  
+  → banners worked, but I fell through the ground (collision matrix mismatch).
+
+### What worked: “two bodies” + TriggerRelay
+Instead of forcing one collider to do everything, I split responsibilities:
+
+1) **AvatarRoot (Default layer)**  
+- CapsuleCollider + Rigidbody  
+- Collides with ground/walls normally.
+
+2) **BannerHitbox child (locomotion layer, Trigger)**  
+- Trigger collider only  
+- Exists only to talk to the repo triggers.
+
+Then I forward collisions to the existing repo logic:
+
+```csharp
+public class TriggerRelay : MonoBehaviour
+{
+    public LocomotionTechnique locomotion;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (locomotion) locomotion.AvatarTriggerEnter(other);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (locomotion) locomotion.AvatarTriggerEnter(collision.collider);
+    }
+}
+```
+
+This let me integrate without rewriting the repo scripts.
+
+---
+
+## 4.8 Interaction mode: mode switching + “avatar didn’t come back” bug
+
+### The problem (1): how do I start the task reliably?
+Originally I assumed a grab/button. But grabbing isn’t realistic because my hands are already used for locomotion gestures.
+
+**Fix:** “VR station” approach:
+- enter trigger → show UI “Pinch to start”
+- pinch is the actual start action (reliable)
+
+I tried a few other gestures, but pinch was the most reliable and least annoying.
+
+### The problem (2): locomotion wouldn’t stop
+I first disabled “Player Locomotor”, but my real movement is inside my custom `LocomotionTechnique` attached to OVRCameraRig, so nothing changed.
+
+**Fix:** PlayerModeManager toggles the correct scripts:
+- disable locomotion behaviours (including LocomotionTechnique)
+- enable interaction behaviours
+- also kill momentum so I don’t drift while doing the puzzle
+
+### The problem (3): avatar didn’t come back after interaction
+I hid avatar renderers during the puzzle (so my own body doesn’t block the view). But after finishing, sometimes the avatar stayed invisible.
+
+Cause: the interaction script got disabled before it could re-enable renderers.
+
+**Fix:** restore visuals in `OnDisable()`:
+```csharp
+void OnDisable()
+{
+    SetAvatarVisible(true);
+}
+```
+
+This was a tiny fix but it saved me from a lot of “why did my character vanish?” confusion.
+
+---
+
+## 4.9 Small “stuff we tried and dropped” (quick list)
+
+A few experiments that were not worth keeping:
+
+- **HMD yaw driving the camera rig** → caused orbiting and confusion (looking around moved the avatar/camera).
+- **Analog speed everywhere** → looked cool in code, but felt inconsistent and moody with hand tracking noise.
+- **Continuous lift gauge** → constant bouncing, nausea.
+- **UI button interaction start** → unreliable in VR, pinch start was much better.
+
+---
+
+## 4.10 Summary of the final stable setup: 
+
+Final system stability came from treating everything as a **reference-frame + noise** problem:
+- camera follows avatar in LateUpdate (stable third-person),
+- left-hand tilt computed in yaw space and calibrated in yaw space (no drift),
+- activation zones + thresholds + smoothing (stop false input),
+- discrete right-hand jump with cooldown,
+- two-collider setup for repo integration (physics vs triggers),
+- mode switching that disables the actual movement script and restores avatar visuals safely.
+
 
 ---
 
@@ -705,13 +1054,12 @@ Disabling scripts is simple, but it can create lifecycle bugs. I had a case wher
 I did a short user study style evaluation (10 minutes per participant). If you are reading this before I ran the study, the method and questionnaire below are ready to use, and the results section can be filled in after.
 
 ## 5.1 Method
-**Participants:** N = ____ (fill). Mix of VR experience (beginner / intermediate / experienced).  
-**Setup:** Meta Quest with hand tracking enabled.
+**Participants:** N = 2 + me. Both of them were beginners to VR experience.  
+**Setup:** Meta Quest 2 with hand tracking enabled.
 
 **Procedure:**
 1. Explain controls (about 5 minutes).
-2. Task A (locomotion): complete at least one parkour segment and collect coins.
-3. Task B (interaction): complete one T-shape station (start with pinch, manipulate, finish with pinch-hold).
+2. TLocomotion task and Interaction task with headset
 4. Answer quick questionnaire (1–5 ratings) + short open questions.
 
 ## 5.2 Questionnaire (1 = low / 5 = high)
@@ -720,6 +1068,8 @@ I did a short user study style evaluation (10 minutes per participant). If you a
 - How physically tiring was the hand/arm input during play?
 - How “Airbender-like” / immersive did the movement feel?
 - How much discomfort / motion sickness did you feel (dizziness, nausea)?
+- How easy was it to understand Interaction Task control?
+- How physically tiring was the hand/arm input (tilt/gestures) during Interaction Task? 
 
 Open questions:
 - What was the most confusing part?
@@ -732,14 +1082,15 @@ Template:
 - Average effort: __ / 5  
 - Average immersion: __ / 5  
 - Average discomfort: __ / 5  
-- Average Task A time: __ seconds  
-- Average Task B time: __ seconds  
-- Key observations: (1) ___  (2) ___  (3) ___
+- Average time to complete: 4.5 minutes  
+- Key observations: (1) Many controls led to confusion at the beginning  (2) Interaction task was tedious to do perfectly hence both of them closed it when it was 90 percent aligned.   (3) Jumping mechanism induced motion sickness in 1 participant and hence continued without it.
+- Most confusing part: Memorizing controls, especially Interaction one.
+- If you could change one thing: Allowing to speed up and slow down if participants wish. 
 
 ---
 
 # 6. Conclusion
-Overall, the system mostly achieved what I wanted. The final left-hand tilt locomotion is predictable, and mapping it to HMD yaw made it usable on corners. The discrete right-hand jump was much more comfortable than continuous lift. The biggest technical challenge was not the gesture math, but integrating a third-person AvatarRoot back into a first-person parkour pipeline. Splitting the player into a physics body and a trigger sensor solved that cleanly.
+Overall, the system mostly achieved what I wanted. The final left-hand tilt locomotion is predictable, and mapping it to HMD yaw made it usable on corners. The discrete right-hand jump was much more comfortable than continuous lift. The biggest technical challenge was not the gesture math, but integrating a third-person AvatarRoot back into a first-person parkour pipeline.
 
 Main takeaways:
 - Comfort beats clever physics: “correct” motion can still feel bad in VR.
@@ -748,12 +1099,14 @@ Main takeaways:
 
 ---
 
-# 7. Video (required)
-The submission requires a video of me using the techniques and completing the parkour at least once. I included multiple development and feature videos above. For the final submission, I will record one continuous full run and embed it here.
+# 7. Video 
 
-Embed line to use once the file exists in `static/videos/`:
+Below you can see two of my friends who participated in the user study doing their runs:
 
-{{< video src="final-run.mp4" autoplay="false" loop="false" muted="false" playsinline="true" >}}
+{{< video src="parvathy_IARVR_Final.mp4" autoplay="false" loop="false" muted="false" playsinline="true" >}}
+
+
+{{< video src="Manu_IARVR_Final.mp4" autoplay="false" loop="false" muted="false" playsinline="true" >}}
 
 ---
 
@@ -764,7 +1117,7 @@ Embed line to use once the file exists in `static/videos/`:
 - Right hand swirl: jump (one impulse, cooldown).
 - Left fist / pinch gesture (if enabled): recalibrate neutral.
 
-## Interaction mode (inside station)
+## Interaction mode
 - Index pinch: start task.
 - Left pinch + rotate wrist: rotate object.
 - Right pinch + tilt: move object in XZ.

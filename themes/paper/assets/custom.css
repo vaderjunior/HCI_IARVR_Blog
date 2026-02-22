@@ -1,2 +1,20 @@
 /* Place custom css here. */
 @reference './app.css';
+
+/* Make the content column wider (less empty space on left/right) */
+:root{
+  /* harmless if unused, some themes use this var */
+  --main-width: 1100px;
+}
+
+@media (min-width: 900px) {
+  main, .main, .container, .content, .post {
+    max-width: 1100px !important;
+  }
+}
+
+/* Add a bit more breathing room on smaller screens */
+main, .main, .container, .content {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
