@@ -6,7 +6,7 @@ title = 'Final cleanup: Aang sprites, better interaction controls, and a hidden 
 
 Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
 
-## 1) Replacing the placeholder avatar with Aang + airball sprites
+## 1 Replacing the placeholder avatar with Aang + airball sprites
 
 Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
 
@@ -25,15 +25,12 @@ So I switched the visuals to sprites:
 * Apply
 * Then drag it into the SpriteRenderer slot
 
-{{< figure src="PLACEHOLDER_sprite_import.png" caption="(add screenshot) Sprite import settings in Unity Inspector" >}}
 
 Also I kept meshes hidden because I only want sprites visible. If any mesh renderer comes back during runtime, I force-hide it again.
 
-{{< figure src="PLACEHOLDER_aang_airball_scene.png" caption="(add screenshot) AvatarRoot with Aang sprite + airball sprite as visuals" >}}
 
-{{< video src="PLACEHOLDER_aang_airball_playtest.mp4" autoplay="true" loop="true" muted="true" playsinline="true" >}}
 
-## 2) Interaction task: fixing backward translation (tilt back actually pulls it towards me)
+## 2 Interaction task: fixing backward translation (tilt back actually pulls it towards me)
 
 In the object interaction task, translation was working forward, but “tilt back” was refusing to move backward.
 I was pinching and doing the “three fingers up / Jesus Christ” wrist bend, but nothing happened.
@@ -49,11 +46,9 @@ That made the gesture match what I naturally do:
 
 And I updated the neutral calibration to also use the same axis so the comparison stays consistent.
 
-{{< figure src="PLACEHOLDER_translation_fix.png" caption="(add screenshot) Translation axis change: forward → up + neutral calibration update" >}}
 
-{{< video src="PLACEHOLDER_interaction_backward_working.mp4" autoplay="true" loop="true" muted="true" playsinline="true" >}}
 
-## 3) HUD: still running, but only visible when I trigger it
+## 3 HUD: still running, but only visible when I trigger it
 
 When I start the parkour I see big UI text in my face (time, coins, etc.).
 I wanted it to keep updating in the background, but only show up when I want.
@@ -69,7 +64,7 @@ Gesture-wise, I avoided pinch because pinch is already used for starting/exiting
 
 {{< video src="PLACEHOLDER_hud_toggle_demo.mp4" autoplay="true" loop="true" muted="true" playsinline="true" >}}
 
-## 4) Quick recap of what improved today
+## 4 Quick recap of what improved today
 
 * Aang + airball sprites replaced the cursed cylinder + sphere visuals
 * Object interaction “tilt back” finally works (backward translation fixed)

@@ -26,7 +26,7 @@
   <meta name="theme-color" />
 
   <meta name="description" content="Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
-1) Replacing the placeholder avatar with Aang &#43; airball sprites
+1 Replacing the placeholder avatar with Aang &#43; airball sprites
 Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
 So I switched the visuals to sprites:
 
@@ -63,16 +63,16 @@ Important thing I learned: I can’t just drag any PNG into a SpriteRenderer. It
   <meta name="generator" content="Hugo 0.152.2">
   <meta itemprop="name" content="Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon">
   <meta itemprop="description" content="Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
-1) Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
+1 Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
 So I switched the visuals to sprites:
 the cylinder became an Aang sprite the sphere became an airball sprite the physics stayed the same (AvatarRoot collider &#43; rigidbody), only visuals changed Important thing I learned: I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.">
   <meta itemprop="datePublished" content="2026-02-03T18:00:00+01:00">
   <meta itemprop="dateModified" content="2026-02-03T18:00:00+01:00">
-  <meta itemprop="wordCount" content="570"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/">
+  <meta itemprop="wordCount" content="523"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/">
   <meta property="og:site_name" content="Ajays IARVR Site">
   <meta property="og:title" content="Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon">
   <meta property="og:description" content="Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
-1) Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
+1 Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
 So I switched the visuals to sprites:
 the cylinder became an Aang sprite the sphere became an airball sprite the physics stayed the same (AvatarRoot collider &#43; rigidbody), only visuals changed Important thing I learned: I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.">
   <meta property="og:locale" content="en_us">
@@ -84,7 +84,7 @@ the cylinder became an Aang sprite the sphere became an airball sprite the physi
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon">
   <meta name="twitter:description" content="Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.
-1) Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
+1 Replacing the placeholder avatar with Aang &#43; airball sprites Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.
 So I switched the visuals to sprites:
 the cylinder became an Aang sprite the sphere became an airball sprite the physics stayed the same (AvatarRoot collider &#43; rigidbody), only visuals changed Important thing I learned: I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.">
 
@@ -169,7 +169,7 @@ the cylinder became an Aang sprite the sphere became an airball sprite the physi
     <h1 class="my-0! pb-2.5">Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon</h1><div class="text-xs antialiased opacity-60"><time>Feb 3, 2026</time></div></header>
 
   <section><p>Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.</p>
-<h2 id="1-replacing-the-placeholder-avatar-with-aang--airball-sprites">1) Replacing the placeholder avatar with Aang + airball sprites</h2>
+<h2 id="1-replacing-the-placeholder-avatar-with-aang--airball-sprites">1 Replacing the placeholder avatar with Aang + airball sprites</h2>
 <p>Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.</p>
 <p>So I switched the visuals to sprites:</p>
 <ul>
@@ -185,32 +185,8 @@ the cylinder became an Aang sprite the sphere became an airball sprite the physi
 <li>Apply</li>
 <li>Then drag it into the SpriteRenderer slot</li>
 </ul>
-<figure><img src="PLACEHOLDER_sprite_import.png"
-    alt="(add screenshot) Sprite import settings in Unity Inspector"><figcaption>
-      <p>(add screenshot) Sprite import settings in Unity Inspector</p>
-    </figcaption>
-</figure>
-
 <p>Also I kept meshes hidden because I only want sprites visible. If any mesh renderer comes back during runtime, I force-hide it again.</p>
-<figure><img src="PLACEHOLDER_aang_airball_scene.png"
-    alt="(add screenshot) AvatarRoot with Aang sprite &#43; airball sprite as visuals"><figcaption>
-      <p>(add screenshot) AvatarRoot with Aang sprite + airball sprite as visuals</p>
-    </figcaption>
-</figure>
-
-<video
-  controls
-  autoplay
-  loop
-  muted
-  playsinline
-  width="900"
-  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
->
-  <source src='../../videos/PLACEHOLDER_aang_airball_playtest.mp4' type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-<h2 id="2-interaction-task-fixing-backward-translation-tilt-back-actually-pulls-it-towards-me">2) Interaction task: fixing backward translation (tilt back actually pulls it towards me)</h2>
+<h2 id="2-interaction-task-fixing-backward-translation-tilt-back-actually-pulls-it-towards-me">2 Interaction task: fixing backward translation (tilt back actually pulls it towards me)</h2>
 <p>In the object interaction task, translation was working forward, but “tilt back” was refusing to move backward.
 I was pinching and doing the “three fingers up / Jesus Christ” wrist bend, but nothing happened.</p>
 <p>Turns out my logic was reading <code>rightHand.transform.forward</code>, and that axis doesn’t always flip the way my brain expects when I tilt my wrist back.</p>
@@ -222,25 +198,7 @@ That made the gesture match what I naturally do:</p>
 <li>pinch + tilt right/left → slide right/left</li>
 </ul>
 <p>And I updated the neutral calibration to also use the same axis so the comparison stays consistent.</p>
-<figure><img src="PLACEHOLDER_translation_fix.png"
-    alt="(add screenshot) Translation axis change: forward → up &#43; neutral calibration update"><figcaption>
-      <p>(add screenshot) Translation axis change: forward → up + neutral calibration update</p>
-    </figcaption>
-</figure>
-
-<video
-  controls
-  autoplay
-  loop
-  muted
-  playsinline
-  width="900"
-  style="max-width: 100%; height: auto; border-radius: 10px; margin: 0.5rem 0 1rem 0;"
->
-  <source src='../../videos/PLACEHOLDER_interaction_backward_working.mp4' type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-<h2 id="3-hud-still-running-but-only-visible-when-i-trigger-it">3) HUD: still running, but only visible when I trigger it</h2>
+<h2 id="3-hud-still-running-but-only-visible-when-i-trigger-it">3 HUD: still running, but only visible when I trigger it</h2>
 <p>When I start the parkour I see big UI text in my face (time, coins, etc.).
 I wanted it to keep updating in the background, but only show up when I want.</p>
 <p>I tried hiding the canvas, but Oculus UI stuff can be weird and it didn’t reliably disappear.
@@ -265,7 +223,7 @@ The version that finally worked was: <strong>disable the TMP text renderers</str
   <source src='../../videos/PLACEHOLDER_hud_toggle_demo.mp4' type="video/mp4">
   Your browser does not support the video tag.
 </video>
-<h2 id="4-quick-recap-of-what-improved-today">4) Quick recap of what improved today</h2>
+<h2 id="4-quick-recap-of-what-improved-today">4 Quick recap of what improved today</h2>
 <ul>
 <li>Aang + airball sprites replaced the cursed cylinder + sphere visuals</li>
 <li>Object interaction “tilt back” finally works (backward translation fixed)</li>

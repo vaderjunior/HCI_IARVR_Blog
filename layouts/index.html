@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+  {{/* 1) Show landing page content from content/_index.md */}}
+  {{ if .Content }}
+    <article class="post">
+      {{ .Content }}
+    </article>
+    <hr/>
+  {{ end }}
+
+  {{/* 2) Keep your devlog post list below (optional) */}}
+  <section class="post">
+    <h2>Devlog posts</h2>
+
+    {{ $pages := where site.RegularPages "Type" "in" (site.Params.mainSections | default (slice "posts")) }}
+    {{ $paginator := .Paginate $pages }}
+
+    {{ range $paginator.Pages }}
+      {{ if gt .Weight 0 }}<span>Featured</span>{{ end }}
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Date | time.Format ":date_medium" }}</p>
+    {{ end }}
+
+    {{ if gt $paginator.TotalPages 1 }}
+      <nav>
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
+        {{ end }}
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
+        {{ end }}
+      </nav>
+    {{ end }}
+  </section>
+
+{{ end }}
