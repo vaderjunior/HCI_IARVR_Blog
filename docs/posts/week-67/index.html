@@ -27,7 +27,7 @@
 
   <meta name="description" content="This week I finally started working on the LocomotionTechnique script itself instead of just moving GameObjects around like Lego. It was fun to test things out on the already existing repo, Must have taken a lot of hours to make this entir thing. Just thinking about it made me motion sick :scream:
 In the original project the camera rig was the player. In my version the real body is AvatarRoot  a capsule collider rolling through the world with a cylinder (avatar) and a sphere (airball) as place holder. I thought I will put in design later, incase everythign gets done by February." />
-  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.css" />
+  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.5386ecd394e7be7afd2e16a99946702b0eaae87b08f0f3957aaaa3e6b593a037.css" integrity="sha256-U4bs05Tnvnr9LhapmUZwKw6q6HsI8POVeqqj5rWToDc=" />
 
   
   <link rel="preload" as="image" href="https://vaderjunior.github.io/HCI_IARVR_Blog/theme.png" />
@@ -39,7 +39,7 @@ In the original project the camera rig was the player. In my version the real bo
   <script
     defer
     src="https://vaderjunior.github.io/HCI_IARVR_Blog/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
+    onload="hljs.initHighlightingOnLoad()"
   ></script>
 
   
@@ -117,7 +117,7 @@ In the original project the camera rig was the player. In my version the real bo
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     const lightBg = '#faf8f1'.replace(/"/g, '');
     const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
       localStorage.setItem('dark', isDark);
     };

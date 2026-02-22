@@ -30,7 +30,7 @@ This week was mostly spent on thinking and trying to work out what locomotion te
 Firstly I tried to remember and dig up all the things previous years’ students did, not just to be inspired but to do something that is different from what they have done.
 Also I tried familiarising myself with the whole Unity and locomotion system in general.
 The video and playlist below were super useful. The guy is fun to listen to and overall I learned how to calibrate the controller feedback to actual input for movement and how to fine tune it. Even though everything is not clear I thought I would look up more when I actually start the project." />
-  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.css" />
+  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.5386ecd394e7be7afd2e16a99946702b0eaae87b08f0f3957aaaa3e6b593a037.css" integrity="sha256-U4bs05Tnvnr9LhapmUZwKw6q6HsI8POVeqqj5rWToDc=" />
 
   
   <link rel="preload" as="image" href="https://vaderjunior.github.io/HCI_IARVR_Blog/theme.png" />
@@ -42,7 +42,7 @@ The video and playlist below were super useful. The guy is fun to listen to and 
   <script
     defer
     src="https://vaderjunior.github.io/HCI_IARVR_Blog/highlight.min.js"
-    onload="hljs.initHighlightingOnLoad();"
+    onload="hljs.initHighlightingOnLoad()"
   ></script>
 
   
@@ -129,7 +129,7 @@ The video and playlist below were super useful. The guy is fun to listen to and 
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     const lightBg = '#faf8f1'.replace(/"/g, '');
     const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      metaTheme.setAttribute('content', isDark ? "rgb(0 0 0 / 85%)" : lightBg);
       htmlClass[isDark ? 'add' : 'remove']('dark');
       localStorage.setItem('dark', isDark);
     };
