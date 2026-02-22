@@ -1108,6 +1108,7 @@ Below you can see two of my friends who participated in the user study doing the
 
 {{< video src="Manu_IARVR_Final.mp4" autoplay="false" loop="false" muted="false" playsinline="true" >}}
 
+
 ---
 
 # Appendix A: Controls cheat sheet
