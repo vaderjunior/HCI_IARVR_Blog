@@ -1181,6 +1181,78 @@ Below you can see two of my friends who participated in the user study doing the
 
 ---
 
+## References
+
+### SDKs and official docs (Meta / Quest)
+- Meta XR SDK — Tutorial: Receive Basic Input from Hand Tracking (Unity)  
+  https://developers.meta.com/horizon/documentation/unity/unity-tutorial-basic-hand-tracking/
+
+- Meta XR SDK — Hands Setup (Unity)  
+  https://developers.meta.com/horizon/documentation/unity/unity-handtracking-hands-setup/
+
+- Meta XR Interaction SDK — Overview (Unity)  
+  https://developers.meta.com/horizon/documentation/unity/unity-isdk-interaction-sdk-overview/
+
+- Meta XR Interaction SDK — Getting started with Unity XR (OpenXR / XR Hands)  
+  https://developers.meta.com/horizon/documentation/unity/unity-isdk-getting-started-unityxr/
+
+- Oculus VR Best Practices Guide (comfort / sickness / camera movement) [PDF]  
+  https://s3.amazonaws.com/arena-attachments/238441/2330603062c2e502c5c2ca40443c2fa4.pdf
+
+
+### Unity documentation (the stuff I used and think will be useful for next steps)
+- Unity Manual — Execution Order of Event Functions (Update / LateUpdate / FixedUpdate)  
+  https://docs.unity3d.com/2021.3/Documentation/Manual/ExecutionOrder.html
+
+- Unity Manual — Quaternion and Euler rotations in Unity  
+  https://docs.unity3d.com/6000.3/Documentation/Manual/QuaternionAndEulerRotationsInUnity.html
+
+- Unity Scripting API — Vector3.Dot  
+  https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Vector3.Dot.html
+
+- Unity Scripting API — ForceMode.VelocityChange  
+  https://docs.unity3d.com/6000.3/Documentation/ScriptReference/ForceMode.VelocityChange.html
+
+- Unity Scripting API — RigidbodyConstraints.FreezeRotation  
+  https://docs.unity3d.com/6000.3/Documentation/ScriptReference/RigidbodyConstraints.FreezeRotation.html
+
+- Unity Scripting API — Rigidbody.angularVelocity  
+  https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Rigidbody-angularVelocity.html
+
+- Unity Scripting API — Rigidbody.Sleep  
+  https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Rigidbody.Sleep.html
+
+
+### Research / papers (locomotion + comfort)
+- Bozgeyikli et al. (2019) — *Locomotion in virtual reality for room scale tracked areas* (comparative study of multiple techniques)  
+  https://www.sciencedirect.com/science/article/abs/pii/S1071581918304476
+
+- Boletsis (2022) — *A Typology of Virtual Reality Locomotion Techniques* (review/typology)  
+  https://www.mdpi.com/2414-4088/6/9/72
+
+- Rouhani et al. (2024) — *Towards benchmarking VR sickness* [PDF] (overview + countermeasures)  
+  https://pub.h-brs.de/files/8552/S0141938224001719.pdf
+
+- Cherni et al. — *Literature review of locomotion techniques in virtual reality* (systematic review 2012–2019)  
+  https://www.researchgate.net/publication/340250772_Literature_review_of_locomotion_techniques_in_virtual_reality
+
+
+### Inspiration / media (what the project is based on)
+- “60 Minutes of Aang Airbending!” (Avatar: The Last Airbender compilation)  
+  https://www.youtube.com/watch?v=NX1ciOBC7g0
+
+- “Aang Airbends & Goes Into the Avatar State!” (90 minutes compilation)  
+  https://www.youtube.com/watch?v=SSaK__ourfw
+
+- Air scooter 3D animation reference clip  
+  https://www.youtube.com/watch?v=r-NFcIzrMwc
+
+
+### Extra 
+- Meta XR Interaction SDK Unity MasterClass (overview + practical setup)  
+  https://www.youtube.com/watch?v=ZHLWgl13718
+
+  
 ## Appendix A: Controls cheat sheet
 
 ### Locomotion mode
