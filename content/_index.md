@@ -9,7 +9,7 @@ description: "Final project page — hand-tracked airbending locomotion + intera
 ## Abstract 
 I built a VR locomotion + interaction system inspired by airbending (Avatar: The Last Airbender). The final technique uses hand tracking: **left-hand tilt** controls horizontal movement and direction, and a deliberate **right-hand swirl** triggers a single upward jump. The parkour course and the object-interaction tasks in the provided course repository were originally built for a first-person **OVRCameraRig** player, so a large part of the work was integrating my third-person “**AvatarRoot**” body back into that pipeline. This page explains the motivation, early prototypes, the final implementation, the hardest challenges, and a small user study plan.
 
----
+--- 
 
 ## 1. Introduction & Motivation
 Most VR movement is still thumbstick-based. It works, but it does not feel like you are “doing” the movement. I wanted something more embodied and playful: **move like an airbender**, using hands, while still being able to finish the course parkour track and the interaction tasks.
