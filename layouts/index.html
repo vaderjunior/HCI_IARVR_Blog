@@ -1,36 +1,46 @@
 {{ define "main" }}
 
-  {{/* 1) Show landing page content from content/_index.md */}}
-  {{ if .Content }}
-    <article class="post">
-      {{ .Content }}
-    </article>
-    <hr/>
-  {{ end }}
+<div class="homeGrid">
 
-  {{/* 2) Keep your devlog post list below (optional) */}}
-  <section class="post">
-    <h2>Devlog posts</h2>
+  <!-- LEFT: your expanded final project page content -->
+  <main class="homeMain">
+    {{ if .Content }}
+      <article class="post">
+        {{ .Content }}
+      </article>
+    {{ end }}
+  </main>
 
-    {{ $pages := where site.RegularPages "Type" "in" (site.Params.mainSections | default (slice "posts")) }}
-    {{ $paginator := .Paginate $pages }}
+  <!-- RIGHT: sticky navigation -->
+  <aside class="homeSide">
 
-    {{ range $paginator.Pages }}
-      {{ if gt .Weight 0 }}<span>Featured</span>{{ end }}
-      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-      <p>{{ .Date | time.Format ":date_medium" }}</p>
+    <!-- A) On-page sections (Table of Contents) -->
+    {{ with .TableOfContents }}
+      <div class="sideBox">
+        <div class="sideTitle">On this page</div>
+        <div class="sideToc">
+          {{ . }}
+        </div>
+      </div>
     {{ end }}
 
-    {{ if gt $paginator.TotalPages 1 }}
-      <nav>
-        {{ if $paginator.HasPrev }}
-          <a href="{{ $paginator.Prev.URL }}">← {{ i18n "prev_page" }}</a>
+    <!-- B) Devlog posts list (latest → older) -->
+    <div class="sideBox">
+      <div class="sideTitle">Devlog</div>
+
+      {{ $pages := where site.RegularPages "Type" "in" (site.Params.mainSections | default (slice "posts")) }}
+      {{ $pages = $pages.ByDate.Reverse }}
+
+      <ul class="sideList">
+        <li><a href="{{ .RelPermalink }}">Final project page</a></li>
+        {{ range $pages }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{ end }}
-        {{ if $paginator.HasNext }}
-          <a href="{{ $paginator.Next.URL }}">{{ i18n "next_page" }} →</a>
-        {{ end }}
-      </nav>
-    {{ end }}
-  </section>
+      </ul>
+    </div>
+
+  </aside>
+
+</div>
 
 {{ end }}

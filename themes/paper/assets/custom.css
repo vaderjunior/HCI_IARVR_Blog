@@ -18,3 +18,137 @@ main, .main, .container, .content {
   padding-left: 24px !important;
   padding-right: 24px !important;
 }
+
+/* --- Home page: 2-column layout with sticky right nav --- */
+.homeGrid{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 28px;
+  align-items: start;
+}
+
+.homeSide{
+  position: sticky;
+  top: 90px; /* adjust if header overlaps */
+  align-self: start;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.sideBox{
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  padding: 14px 14px;
+  margin-bottom: 14px;
+}
+
+.sideTitle{
+  font-weight: 700;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
+
+/* toc from Hugo is a <nav id="TableOfContents"> ... */
+.sideToc nav ul{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.sideToc nav ul ul{
+  padding-left: 14px;
+  margin-top: 6px;
+}
+.sideToc a{
+  text-decoration: none;
+  opacity: 0.9;
+}
+.sideToc a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.sideList{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.sideList li{
+  margin: 8px 0;
+}
+.sideList a{
+  text-decoration: none;
+  opacity: 0.9;
+}
+.sideList a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Mobile: collapse to single column */
+@media (max-width: 980px){
+  .homeGrid{
+    grid-template-columns: 1fr;
+  }
+  .homeSide{
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+}
+/* --- Sidebar TOC: remove underline + nicer spacing --- */
+.sideToc a, .sideList a{
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+.sideToc a{
+  display: inline-block;
+  line-height: 1.25;
+  padding: 2px 0;
+}
+
+/* reduce bullet indentation + make it cleaner */
+.sideToc nav ul{
+  padding-left: 0 !important;
+}
+.sideToc nav li{
+  margin: 6px 0;
+}
+
+/* slightly dim nested items */
+.sideToc nav ul ul a{
+  opacity: 0.75;
+}
+.sideToc nav ul ul a:hover{
+  opacity: 1;
+}
+
+/* optional: smaller bullets */
+.sideToc nav li::marker{
+  opacity: 0.35;
+}
+/* --- TOC indentation so 3.1 looks clearly under 3 --- */
+
+/* indent 2nd level */
+.sideToc nav > ul > li > ul{
+  padding-left: 18px !important;
+  margin-top: 8px;
+  border-left: 2px solid rgba(255,255,255,0.10);
+}
+
+/* indent 3rd level even more */
+.sideToc nav ul ul ul{
+  padding-left: 14px !important;
+  border-left: 2px solid rgba(255,255,255,0.08);
+}
+
+/* make nested items slightly smaller + dimmer so hierarchy is obvious */
+.sideToc nav ul ul a{
+  font-size: 0.95em;
+  opacity: 0.75;
+}
+.sideToc nav ul ul a:hover{
+  opacity: 1;
+}
