@@ -236,3 +236,20 @@ figcaption {
     overflow: visible;
   }
 }
+
+/* Big embedded PPTX (Office viewer) */
+.slidesBig{
+  width: 100%;
+  height: 88vh;  /* big */
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  margin: 14px 0 10px 0;
+}
+
+.slidesBig iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

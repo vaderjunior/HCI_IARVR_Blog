@@ -1187,12 +1187,18 @@ Below you can see two of my friends who participated in the user study doing the
 
 ## 9. Final Presentation (Slides)
 
-<div class="slidesEmbed">
+<div class="slidesBig">
   <iframe
-    src="https://view.officeapps.live.com/op/embed.aspx?src=https://vaderjunior.github.io/HCI_IARVR_Blog/files/IARVR_Pitch.pptx"
+    src="https://view.officeapps.live.com/op/embed.aspx?src=https://vaderjunior.github.io/HCI_IARVR_Blog/files/IARVR_Final_Presentation_AjayJose.pptx"
     loading="lazy"
+    allowfullscreen
   ></iframe>
 </div>
+
+<p>
+  If the embed doesn’t load:
+  <a href="https://vaderjunior.github.io/HCI_IARVR_Blog/files/IARVR_Final_Presentation_AjayJose.pptx">open the PPTX</a>.
+</p>
 
 
 ## References
