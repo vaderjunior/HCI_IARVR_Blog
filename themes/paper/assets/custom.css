@@ -253,3 +253,90 @@ figcaption {
   height: 100%;
   border: 0;
 }
+
+/* ===== Cleaner "On this page" TOC ===== */
+
+/* Works for both your .sideToc and the theme's default TOC */
+.sideToc nav#TableOfContents ul,
+nav#TableOfContents ul{
+  list-style: none !important;
+  margin: 0;
+  padding-left: 0;
+}
+
+/* general link style */
+.sideToc nav#TableOfContents a,
+nav#TableOfContents a{
+  display: block;
+  padding: 6px 10px;
+  border-radius: 10px;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  line-height: 1.25;
+  opacity: 0.92;
+}
+
+/* top-level items = more prominent */
+.sideToc nav#TableOfContents > ul > li > a,
+nav#TableOfContents > ul > li > a{
+  font-weight: 700;
+  font-size: 0.98em;
+  opacity: 0.98;
+}
+
+/* spacing between top-level groups */
+.sideToc nav#TableOfContents > ul > li,
+nav#TableOfContents > ul > li{
+  margin: 8px 0;
+}
+
+/* nested lists = indented + left border */
+.sideToc nav#TableOfContents ul ul,
+nav#TableOfContents ul ul{
+  margin-top: 6px;
+  margin-left: 6px;
+  padding-left: 12px;
+  border-left: 2px solid var(--border);
+}
+
+/* sub-items = smaller + dimmer */
+.sideToc nav#TableOfContents ul ul a,
+nav#TableOfContents ul ul a{
+  font-weight: 500;
+  font-size: 0.92em;
+  opacity: 0.72;
+  padding: 5px 10px;
+}
+
+/* hover */
+.sideToc nav#TableOfContents a:hover,
+nav#TableOfContents a:hover{
+  background: var(--hover-bg);
+  opacity: 1;
+}
+
+/* ===== TOC: stronger indentation per level ===== */
+
+/* Level 2 (H3 under H2) */
+.sideToc nav#TableOfContents > ul > li > ul,
+nav#TableOfContents > ul > li > ul{
+  margin-left: 10px;
+  padding-left: 18px;
+  border-left: 2px solid var(--border);
+}
+
+/* Level 3 (H4 under H3) */
+.sideToc nav#TableOfContents ul ul ul,
+nav#TableOfContents ul ul ul{
+  margin-left: 10px;
+  padding-left: 18px;
+  border-left: 2px solid rgba(255,255,255,0.08);
+}
+
+/* Level 4+ (if any) */
+.sideToc nav#TableOfContents ul ul ul ul,
+nav#TableOfContents ul ul ul ul{
+  margin-left: 10px;
+  padding-left: 18px;
+  border-left: 2px solid rgba(255,255,255,0.06);
+}

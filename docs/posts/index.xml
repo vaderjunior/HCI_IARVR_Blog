@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Ajays IARVR Site</title>
-    <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/</link>
+    <link>http://localhost:1313/HCI_IARVR_Blog/posts/</link>
     <description>Recent content in Posts on Ajays IARVR Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 03 Feb 2026 18:00:00 +0100</lastBuildDate>
-    <atom:link href="https://vaderjunior.github.io/HCI_IARVR_Blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/HCI_IARVR_Blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Final cleanup: Aang sprites, better interaction controls, and a hidden HUD you can summon</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/final-cleanup-and-polish/</link>
       <pubDate>Tue, 03 Feb 2026 18:00:00 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/final-cleanup-and-polish/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/final-cleanup-and-polish/</guid>
       <description>&lt;p&gt;Today was mostly “polish day”, but it fixed a bunch of things that were bothering me for weeks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;1-replacing-the-placeholder-avatar-with-aang--airball-sprites&#34;&gt;1 Replacing the placeholder avatar with Aang + airball sprites&lt;/h2&gt;&#xA;&lt;p&gt;Until now my “avatar” was literally a cylinder on a sphere. It worked for logic, but it looked like a science project.&lt;/p&gt;&#xA;&lt;p&gt;So I switched the visuals to sprites:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;the &lt;strong&gt;cylinder&lt;/strong&gt; became an &lt;strong&gt;Aang sprite&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;the &lt;strong&gt;sphere&lt;/strong&gt; became an &lt;strong&gt;airball sprite&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;the physics stayed the same (AvatarRoot collider + rigidbody), only visuals changed&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Important thing I learned:&lt;/strong&gt; I can’t just drag any PNG into a SpriteRenderer. It needs to be imported as a Sprite first.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jan Second Half: Interaction Task</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/jan-second-half/</link>
       <pubDate>Sat, 31 Jan 2026 09:57:00 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-second-half/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/jan-second-half/</guid>
       <description>&lt;p&gt;Last week I ended with: “I haven’t started the interaction task at all and it’s making me anxious.”&#xA;Yeah… that anxiety aged like milk.&#xA;Because the interaction task turned out to be &lt;em&gt;two separate problems&lt;/em&gt; hiding behind one :&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;How do I even start the task?&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;How do I disable locomotion so I don’t drift away while trying to fit a T inside a hole like a stressed-out toddler?&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;This post is basically how I made the “T shape puzzle” work end-to-end:&#xA;1. enter checkpoint&#xA;2. pinch to start&#xA;3. manipulate object&#xA;4. pinch hold to finish&#xA;5. return to locomotion.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Jan First Half: Finishing up Locomotion</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/jan-first-half/</link>
       <pubDate>Sat, 17 Jan 2026 11:10:19 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/jan-first-half/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/jan-first-half/</guid>
       <description>&lt;p&gt;After all the work on left-hand and right-hand gestures, I realised something slightly embarrassing: the parkour course didn’t care at all about my &lt;code&gt;AvatarRoot&lt;/code&gt;. It still thought the &lt;strong&gt;OVRCameraRig&lt;/strong&gt; was the player.&lt;/p&gt;&#xA;&lt;p&gt;So even though I could move around and do my airbending jumps, the game logic was like: “cool story bro, who are you?”&#xA;No timer, no coin pickups, banners didn’t react, and those mini interaction tasks never started.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Winter Break and New year week: When Physics Starts Messing With My Hands</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/winter-break-weeks/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/winter-break-weeks/</link>
       <pubDate>Tue, 06 Jan 2026 09:38:16 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/winter-break-weeks/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/winter-break-weeks/</guid>
       <description>&lt;p&gt;Last week (Week 6) I finally got the AvatarRoot + camera setup working and a very baby version of left-hand &lt;strong&gt;controller&lt;/strong&gt; tilt movement. It moved, it kinda listened, and it also made me dizzy if I tested too long. So for the next weeks the goal was basically: make this feel less like a rollercoaster ride and more like something I can actually have fun with.&lt;/p&gt;&#xA;&lt;p&gt;Also, very important change that happened here: I switched from controllers to hands.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Week 6 and 7: Teaching the Avatar to Follow Me or me to follow it, or him or them cause its a a cylinder and a sphere now</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-67/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/week-67/</link>
       <pubDate>Wed, 10 Dec 2025 09:38:16 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-67/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/week-67/</guid>
       <description>&lt;p&gt;This week I finally started working on the &lt;code&gt;LocomotionTechnique&lt;/code&gt; script itself instead of just moving GameObjects around like Lego. It was fun to test things out on the already existing repo, Must have taken a lot of hours to make this entir thing. Just thinking about it made me motion sick :scream:&lt;/p&gt;&#xA;&lt;p&gt;In the original project the camera rig was the player. In my version the real body is &lt;code&gt;AvatarRoot&lt;/code&gt;  a capsule collider rolling through the world with a cylinder (&lt;code&gt;avatar&lt;/code&gt;) and a sphere (&lt;code&gt;airball&lt;/code&gt;) as place holder. I thought I will put in design later, incase everythign gets done by February.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Week 5: Getting started with Airbending or rather Unitybending</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-5/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/week-5/</link>
       <pubDate>Tue, 25 Nov 2025 09:38:16 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/week-5/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/week-5/</guid>
       <description>&lt;p&gt;This week was finally “hands on” instead of just thinking.&lt;/p&gt;&#xA;&lt;p&gt;I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.&lt;/p&gt;&#xA;&lt;p&gt;After poking around a bit I realised I had just opened a blank scene. The real content is in&#xA;Assets/Scenes/ParkourChallenge.unity. Once I opened that, suddenly the whole level, coins, banners, etc. showed up and actually ran on the Quest.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Week 4: Thinking, thinking and more thinking</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-3/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/day-3/</link>
       <pubDate>Thu, 13 Nov 2025 14:03:36 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-3/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/day-3/</guid>
       <description>&lt;p&gt;So,&lt;/p&gt;&#xA;&lt;p&gt;This week was mostly spent on thinking and trying to work out what locomotion technique I want to use for the project.&lt;/p&gt;&#xA;&lt;p&gt;Firstly I tried to remember and dig up all the things previous years’ students did, not just to be inspired but to do something that is different from what they have done.&lt;/p&gt;&#xA;&lt;p&gt;Also I tried familiarising myself with the whole Unity and locomotion system in general.&lt;br&gt;&#xA;The video and playlist below were super useful. The guy is fun to listen to and overall I learned how to calibrate the controller feedback to actual input for movement and how to fine tune it. Even though everything is not clear I thought I would look up more when I actually start the project.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Day 2-5: Finishing up the game and Playing it in VR</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-2/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/day-2/</link>
       <pubDate>Mon, 03 Nov 2025 10:00:00 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/day-2/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/day-2/</guid>
       <description>&lt;p&gt;I decided to post only when I hit a real milestone instead of spamming daily logs. This one bundles a few action-packed days.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Enemies + first chaos&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;I added an enemy that chases the player ball using a &lt;code&gt;NavMeshAgent&lt;/code&gt;. Looked great… until it started orbiting me and occasionally ghosted through walls.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Reason&lt;/strong&gt;:My enemy had a visible child (EnemyBody) offset from the parent that holds the &lt;code&gt;NavMeshAgent&lt;/code&gt;.&#xA;&lt;strong&gt;Fix&lt;/strong&gt;: created a clean hierarchy Enemy (parent with Agent) → EnemyBody (mesh), then Reset the child to (0,0,0).&lt;/p&gt;</description>
     </item>
     <item>
       <title>Day 1: Setting up Unity, Meta tools, and starting the Roll-a-Ball game</title>
-      <link>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/my-first-post/</link>
+      <link>http://localhost:1313/HCI_IARVR_Blog/posts/my-first-post/</link>
       <pubDate>Tue, 28 Oct 2025 17:33:36 +0100</pubDate>
-      <guid>https://vaderjunior.github.io/HCI_IARVR_Blog/posts/my-first-post/</guid>
+      <guid>http://localhost:1313/HCI_IARVR_Blog/posts/my-first-post/</guid>
       <description>&lt;p&gt;Phew, today was long but really productive.&lt;/p&gt;&#xA;&lt;p&gt;I started by factory resetting the headset because it was still logged into an old account. I wanted to use my own Meta account, so I set it up again. After that I tried it out for a bit and let my friends do the same. My roommate played bowling in VR and we all had a good laugh.&lt;/p&gt;&#xA;&lt;p&gt;Later I moved on to learning Unity and some C#, both completely new to me. Before that, I had finished setting up this Hugo website yesterday. I first tried a fancy theme, but it needed too many extra things, so I switched to the Paper theme that Yara recommended. It was simple and worked right away.&lt;/p&gt;</description>
     </item>
   </channel>
