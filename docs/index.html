@@ -30,7 +30,7 @@
     name="description"
     content="A personal blog"
   />
-  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.04c9ada05344d8061739df01093b60b604a45a51d9053c0b4aa4d41cd98baf41.css" integrity="sha256-BMmtoFNE2AYXOd8BCTtgtgSkWlHZBTwLSqTUHNmLr0E=" />
+  <meta name="author" content="Ajays IARVR Site" /><link rel="preload stylesheet" as="style" href="https://vaderjunior.github.io/HCI_IARVR_Blog/main.min.b15187bb6917504a009430da0f691bd253ccd25738a5bf0b577e7c196b6fe44f.css" integrity="sha256-sVGHu2kXUEoAlDDaD2kb0lPM0lc4pb8LV358GWtv5E8=" />
 
   
   <link rel="preload" as="image" href="https://vaderjunior.github.io/HCI_IARVR_Blog/theme.png" />
@@ -56,7 +56,7 @@
   <meta itemprop="description" content="Final project page — hand-tracked airbending locomotion &#43; interaction in the VR parkour course repo.">
   <meta itemprop="datePublished" content="2026-02-03T18:00:00+01:00">
   <meta itemprop="dateModified" content="2026-02-03T18:00:00+01:00">
-  <meta itemprop="wordCount" content="7394"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/">
+  <meta itemprop="wordCount" content="7361"><meta property="og:url" content="https://vaderjunior.github.io/HCI_IARVR_Blog/">
   <meta property="og:site_name" content="Ajays IARVR Site">
   <meta property="og:title" content="IARVR Project: Airbending Locomotion &#43; Interaction in VR Parkour">
   <meta property="og:description" content="Final project page — hand-tracked airbending locomotion &#43; interaction in the VR parkour course repo.">
@@ -163,7 +163,7 @@
 <hr>
 <h2 id="1-introduction--motivation">1. Introduction &amp; Motivation</h2>
 <p>Most VR movement is still thumbstick-based. It works, but it does not feel like you are “doing” the movement. I wanted something more embodied and playful: <strong>move like an airbender</strong>, using hands, while still being able to finish the course parkour track and the interaction tasks.</p>
-<p>I also tried to remember and dig up all the things previous years’ students did, not just to be inspired but to do something that is different from what they have done.</p>
+<p>I also tried to dig up all the things previous years’ students did, not just to be inspired but to do something that is different from what they have done.</p>
 <hr>
 <h2 id="2-problem-statement">2. Problem Statement</h2>
 <p>The main issues I wanted to address:</p>
@@ -213,8 +213,8 @@
 </video>
 <p>The coming week I started with implementation of this technique.</p>
 <hr>
-<h3 id="32-week-5-getting-started-with-airbending-or-rather-unitybending">3.2 Week 5: Getting started with Airbending (or rather Unitybending)</h3>
-<p>This week was finally “hands on” instead of just thinking.</p>
+<h3 id="32-week-5-getting-started-with-airbending">3.2 Week 5: Getting started with Airbending</h3>
+<p>This week was finally hands on instead of just thinking.</p>
 <p>I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.</p>
 <p>After poking around a bit I realised I had just opened a blank scene. The real content is in:
 <strong>Assets/Scenes/ParkourChallenge.unity</strong>.<br>
@@ -424,7 +424,7 @@ Only by accident I noticed that my hand was still just at the edge of my vision.
 <hr>
 <h4 id="left-hand-the-drunk-phase">Left hand: the drunk phase</h4>
 <p>The core idea stayed the same: hold left hand in front, tilt, avatar glides.</p>
-<p>In practice this turned into: why does the avatar act like a typical person coming out of a bar at 10pm on a saturday??</p>
+<p>In practice this turned into erratic and druk.</p>
 <p>I tried to make the movement feel more “analog” and smooth. So I added:</p>
 <ul>
 <li>deadzone for tiny tilts</li>
@@ -1146,7 +1146,7 @@ In VR that was very nauseous.</p>
 <hr>
 <h2 id="5-evaluation">5. Evaluation</h2>
 <div style="border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:16px 18px; background:rgba(255,255,255,0.03); margin:14px 0;">
-I did a short user study style evaluation (10 minutes per participant). If you are reading this before I ran the study, the method and questionnaire below are ready to use, and the results section can be filled in after.
+I did a short user study style evaluation (10 minutes per participant).
 </div>
 <h3 id="51-method">5.1 Method</h3>
 <div style="border-left:5px solid #60a5fa; border-radius:12px; padding:14px 16px; background:rgba(96,165,250,0.08); margin:12px 0;">
@@ -1203,7 +1203,7 @@ I did a short user study style evaluation (10 minutes per participant). If you a
 <li>Average immersion: 5 / 5</li>
 <li>Average discomfort: 2 / 5</li>
 <li>Average time to complete full game: 3.2 minutes</li>
-<li>Average time to complete all 3 interaction tasks: 42 sec</li>
+<li>Average time to complete all 3 interaction tasks: 40 sec</li>
 </ul>
 </div>
 <div style="border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:14px 16px; background:rgba(255,255,255,0.03); margin:12px 0;">
@@ -1266,6 +1266,18 @@ Below are the results from the Google form:
   Your browser does not support the video tag.
 </video>
 <hr>
+<h2 id="8-links">8. Links</h2>
+<ul>
+<li><strong>GitHub repo:</strong> <a href="https://github.com/vaderjunior/VR-locomotion-parkour">VR-locomotion-parkour (source code)</a></li>
+<li><strong>Android APK (download):</strong> <a href="https://github.com/vaderjunior/VR-locomotion-parkour/blob/main/AirBender_Ajay_Jose_Final.apk">Download APK</a></li>
+</ul>
+<h2 id="9-final-presentation-slides">9. Final Presentation (Slides)</h2>
+<div class="slidesEmbed">
+  <iframe
+    src="https://view.officeapps.live.com/op/embed.aspx?src=https://vaderjunior.github.io/HCI_IARVR_Blog/files/IARVR_Pitch.pptx"
+    loading="lazy"
+  ></iframe>
+</div>
 <h2 id="references">References</h2>
 <h3 id="sdks-and-official-docs-meta--quest">SDKs and official docs (Meta / Quest)</h3>
 <ul>
@@ -1411,7 +1423,7 @@ Below are the results from the Google form:
     <li><a href="#3-solution-early-versions-to-final-system">3. Solution (early versions to final system)</a>
       <ul>
         <li><a href="#31-early-idea-week-4-air-scooter-from-avatar-the-last-airbender">3.1 Early idea (Week 4): Air scooter from Avatar: The Last Airbender</a></li>
-        <li><a href="#32-week-5-getting-started-with-airbending-or-rather-unitybending">3.2 Week 5: Getting started with Airbending (or rather Unitybending)</a></li>
+        <li><a href="#32-week-5-getting-started-with-airbending">3.2 Week 5: Getting started with Airbending</a></li>
         <li><a href="#33-week-6--7-teaching-the-avatar-to-follow-me-or-me-to-follow-it">3.3 Week 6 &amp; 7: Teaching the Avatar to Follow Me (or me to follow it)</a></li>
         <li><a href="#34-winter-break-when-physics-starts-messing-with-my-hands">3.4 Winter Break: When physics starts messing with my hands</a></li>
         <li><a href="#35-pre-christmas-cleanup-making-it-feel-like-a-game">3.5 Pre-Christmas cleanup: making it feel like a game</a></li>
@@ -1443,6 +1455,8 @@ Below are the results from the Google form:
     </li>
     <li><a href="#6-conclusion">6. Conclusion</a></li>
     <li><a href="#7-video">7. Video</a></li>
+    <li><a href="#8-links">8. Links</a></li>
+    <li><a href="#9-final-presentation-slides">9. Final Presentation (Slides)</a></li>
     <li><a href="#references">References</a>
       <ul>
         <li><a href="#sdks-and-official-docs-meta--quest">SDKs and official docs (Meta / Quest)</a></li>
