@@ -1180,6 +1180,11 @@ Below you can see two of my friends who participated in the user study doing the
 
 
 ---
+## 8. Links
+
+- **GitHub repo:** [VR-locomotion-parkour (source code)](https://github.com/vaderjunior/VR-locomotion-parkour)
+- **Android APK (download):** [Download APK](https://github.com/vaderjunior/VR-locomotion-parkour/blob/main/AirBender_Ajay_Jose_Final.apk)
+
 
 ## References
 
