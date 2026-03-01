@@ -14,7 +14,7 @@ I built a VR locomotion + interaction system inspired by airbending (Avatar: The
 ## 1. Introduction & Motivation
 Most VR movement is still thumbstick-based. It works, but it does not feel like you are “doing” the movement. I wanted something more embodied and playful: **move like an airbender**, using hands, while still being able to finish the course parkour track and the interaction tasks.
 
-I also tried to remember and dig up all the things previous years’ students did, not just to be inspired but to do something that is different from what they have done.
+I also tried to dig up all the things previous years’ students did, not just to be inspired but to do something that is different from what they have done.
 
 ---
 
@@ -55,8 +55,8 @@ The coming week I started with implementation of this technique.
 
 ---
 
-### 3.2 Week 5: Getting started with Airbending (or rather Unitybending)
-This week was finally “hands on” instead of just thinking.
+### 3.2 Week 5: Getting started with Airbending 
+This week was finally hands on instead of just thinking.
 
 I started by forking and cloning the VR locomotion parkour repo from our course. The instructions said “open the VRParkour folder as a Unity project”, but when I did that and hit Play, the scene was completely empty.
 
@@ -264,7 +264,7 @@ From here on, when I say “left hand / right hand”, I mostly mean the real tr
 #### Left hand: the drunk phase
 The core idea stayed the same: hold left hand in front, tilt, avatar glides.
 
-In practice this turned into: why does the avatar act like a typical person coming out of a bar at 10pm on a saturday??
+In practice this turned into erratic and druk.
 
 I tried to make the movement feel more “analog” and smooth. So I added:
 
@@ -1072,7 +1072,7 @@ Final system stability came from treating everything as a **reference frame + no
 ## 5. Evaluation
 
 <div style="border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:16px 18px; background:rgba(255,255,255,0.03); margin:14px 0;">
-I did a short user study style evaluation (10 minutes per participant). If you are reading this before I ran the study, the method and questionnaire below are ready to use, and the results section can be filled in after.
+I did a short user study style evaluation (10 minutes per participant).
 </div>
 
 ### 5.1 Method
@@ -1087,7 +1087,7 @@ I did a short user study style evaluation (10 minutes per participant). If you a
 
 1. Explain controls (about 5 minutes).
 2. TLocomotion task and Interaction task with headset
-4. Answer quick questionnaire (1–5 ratings) + short open questions.
+3. Answer quick questionnaire (1–5 ratings) + short open questions.
 </div>
 
 ### 5.2 Questionnaire (1 = low / 5 = high)
@@ -1123,7 +1123,7 @@ I did a short user study style evaluation (10 minutes per participant). If you a
 - Average immersion: 5 / 5  
 - Average discomfort: 2 / 5  
 - Average time to complete full game: 3.2 minutes  
-- Average time to complete all 3 interaction tasks: 42 sec
+- Average time to complete all 3 interaction tasks: 40 sec
 </div>
 
 <div style="border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:14px 16px; background:rgba(255,255,255,0.03); margin:12px 0;">
@@ -1184,6 +1184,15 @@ Below you can see two of my friends who participated in the user study doing the
 
 - **GitHub repo:** [VR-locomotion-parkour (source code)](https://github.com/vaderjunior/VR-locomotion-parkour)
 - **Android APK (download):** [Download APK](https://github.com/vaderjunior/VR-locomotion-parkour/blob/main/AirBender_Ajay_Jose_Final.apk)
+
+## 9. Final Presentation (Slides)
+
+<div class="slidesEmbed">
+  <iframe
+    src="https://view.officeapps.live.com/op/embed.aspx?src=https://vaderjunior.github.io/HCI_IARVR_Blog/files/IARVR_Pitch.pptx"
+    loading="lazy"
+  ></iframe>
+</div>
 
 
 ## References
