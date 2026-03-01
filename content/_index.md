@@ -1195,11 +1195,6 @@ Below you can see two of my friends who participated in the user study doing the
   ></iframe>
 </div>
 
-<p>
-  If above doesn’t load:
-  <a href="https://vaderjunior.github.io/HCI_IARVR_Blog/files/IARVR_Pitch.pptx">open the PPTX</a>.
-</p>
-
 
 ## References
 
