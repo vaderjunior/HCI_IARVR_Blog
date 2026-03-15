@@ -340,3 +340,30 @@ nav#TableOfContents ul ul ul ul{
   padding-left: 18px;
   border-left: 2px solid rgba(255,255,255,0.06);
 }
+/* ===== Wider content (keep a small border/padding) ===== */
+
+/* 1) Increase overall page width */
+:root{
+  --content-max: 1400px;          /* try 1300–1500 */
+  --nav-width: var(--content-max); /* make header width match */
+}
+
+/* 2) Reduce left/right padding a bit (but not zero) */
+@media (min-width: 900px){
+  .wrap, main, .main, .container, .content, .post, article{
+    max-width: var(--content-max) !important;
+    padding-left: 16px !important;   /* was 24px */
+    padding-right: 16px !important;  /* was 24px */
+  }
+}
+
+/* 3) Make the right TOC column smaller + reduce gap (if you use your grid layout) */
+@media (min-width: 980px){
+  .homeGrid{
+    grid-template-columns: minmax(0, 1fr) 260px; /* was 320px */
+    gap: 18px;                                   /* was 28px */
+  }
+  .homeSide{
+    max-width: 260px;
+  }
+}
